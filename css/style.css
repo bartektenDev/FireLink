@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  overflow: hidden;
+}
+
+img.resize  {
+  width: 700;
+  height: 700;
+}

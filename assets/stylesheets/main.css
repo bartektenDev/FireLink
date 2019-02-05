@@ -1,0 +1,16 @@
+body {
+  display: grid;
+  overflow: hidden;
+}
+
+#clickme  {
+  width: 100px;
+  height: 100px;
+  left: auto;
+  right: auto;
+  cursor: hand;
+}
+
+#clickme:hover {
+  cursor: hand;
+}

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "926362946477",
+    "firebase_url": "https://firelink-8b41e.firebaseio.com",
+    "project_id": "firelink-8b41e",
+    "storage_bucket": "firelink-8b41e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926362946477:android:ce7a7085d50699c5",
+        "android_client_info": {
+          "package_name": "theandroidguy.bart.firelink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926362946477-6vq7587a7teloaftjhd5029grl7v539o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1N3oP2ndeWRxo5kwtVkjJeZ0GwOxbpp4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

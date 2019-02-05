@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<script src="js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+<style>
+body {
+    background-color: #fff;
+    width: 310px;
+}
+</style>
+    <title>Popup</title>
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  </head>
+  <body>
+  
+
+    <ul class="list-group">
+        <a class="list-group-item">
+        <img src="assets/uploadframes/idle/idle.gif" id="urlLogoDisplay" class="material-icons" width="90px"/>
+        <div class="bmd-list-group-col">
+          <p class="list-group-item-heading">Google</p>
+          <p class="list-group-item-text">https://www.google.com/</p>
+          <input id="submit_form2" class="btn btn-raised btn-warning" type="submit" value="Send" onclick="whoop();" />
+        </div>
+      </a>
+    </ul>
+
+    <form action="https://postmail.invotes.com/send" method="post" id="email_form">
+
+        <input type="text" name="subject" placeholder="Subject" value="FireList" />
+        <textarea name="text" placeholder="Message" ></textarea>
+        <input type="hidden" name="access_token" value="mq1xf6c8r2v3bavoejqyyoq9" />
+        <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+        <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+        <input id="send_details" class="btn btn-secondary" type="submit" value="Send" />
+
+    </form>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

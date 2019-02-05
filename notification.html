@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<script>
+	//Copy right and license reserved to Bart Tarasewicz
+	function sendNotification()
+	{
+		var http = new XMLHttpRequest();
+		var url = 'https://fcm.googleapis.com/fcm/send';
+		var params = "{\n \"data\": {\n \"title\": \"Google\",\n \"content\" : \"https://www.google.com\",\n \"imageUrl\": \"http://h5.4j.com/thumb/Ninja-Run.jpg\"\n },\n \"to\": \"/topics/all\"\n}";
+		http.open('POST', url, true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader('Content-type', 'application/json');
+		http.setRequestHeader('Authorization', 'key=ENTER SERVER KEY HERE');
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			if(http.readyState == 4 && http.status == 200) {
+				alert("Success!");
+			}
+		}
+		http.send(params);
+	}
+	</script>
+	</head>
+	<body>
+	<button onclick="sendNotification();">Send Notification</button>
+	</body>
+</html>

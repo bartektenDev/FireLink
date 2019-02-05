@@ -1,0 +1,13 @@
+Request URL: https://fcm.googleapis.com/fcm/send
+
+{
+ "data": {
+ "title": "Hey",
+ "content" : "Check Out This Awesome Game!",
+ "imageUrl": "http://h5.4j.com/thumb/Ninja-Run.jpg"
+ },
+ "to": "/topics/all"
+}
+
+Authorization: key=
+Content-Type: application/json
