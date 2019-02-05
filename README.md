@@ -15,7 +15,7 @@ key, install FireLink.
 2. Open your git folder and open git bash and enter the following:
 
 ```sh
-git clone FireLink
+git clone https://github.com/bartektenDev/FireLink.git
 ```
 
 3. Now open chrome and copy and paste the following:
