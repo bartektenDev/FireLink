@@ -1,5 +1,5 @@
 # FireLink
-<img src="images/get_started48.png" width="100px" height="100px"/>
+<img src="images/web_hi_res_512.png" width="100px" height="100px"/>
 
 **Status**: Beta Stage 3
 
