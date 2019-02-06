@@ -1,0 +1,21 @@
+REQUEST
+
+POST https://fcm.googleapis.com/fcm/notification
+
+authorization: key=SERVER TOKEN
+content-type: application/json
+project_id: SENDER ID
+
+{
+   "operation": "add",
+   "notification_key_name": "appUser-Chris",
+   "notification_key": "NEW NOTIFICATION KEY",
+   "registration_ids": ["REGISTRATION TOKEN"]
+}
+
+RESPONSE
+
+
+{
+"notification_key": "SAME NOTIFICATION KEY"
+}
