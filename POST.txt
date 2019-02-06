@@ -2,9 +2,10 @@ Request URL: https://fcm.googleapis.com/fcm/send
 
 {
  "data": {
- "title": "Hey",
- "content" : "Check Out This Awesome Game!",
- "imageUrl": "http://h5.4j.com/thumb/Ninja-Run.jpg"
+ "title": "Custom Key",
+ "body" : "The custom key api works!",
+ "imageUrl": "http://h5.4j.com/thumb/Ninja-Run.jpg",
+ "android_channel_id": "102"
  },
  "to": "/topics/all"
 }

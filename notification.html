@@ -6,12 +6,12 @@
 	{
 		var http = new XMLHttpRequest();
 		var url = 'https://fcm.googleapis.com/fcm/send';
-		var params = "{\n \"data\": {\n \"title\": \"Google\",\n \"content\" : \"https://www.google.com\",\n \"imageUrl\": \"http://h5.4j.com/thumb/Ninja-Run.jpg\"\n },\n \"to\": \"/topics/all\"\n}";
+		var params = "{\"data\":{\"title\":\"Custom Key\",\"body\":\"The custom key api works!\",\"imageUrl\":\"http:\/\/h5.4j.com\/thumb\/Ninja-Run.jpg\"},\"to\":\"\/topics\/all\"}";
 		http.open('POST', url, true);
 
 		//Send the proper header information along with the request
 		http.setRequestHeader('Content-type', 'application/json');
-		http.setRequestHeader('Authorization', 'key=ENTER SERVER KEY HERE');
+		http.setRequestHeader('Authorization', 'key=');
 
 		http.onreadystatechange = function() {//Call a function when the state changes.
 			if(http.readyState == 4 && http.status == 200) {
