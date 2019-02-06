@@ -3,6 +3,7 @@ Request URL: https://fcm.googleapis.com/fcm/send
 {
  "to:: "all",
  "data": {
+<<<<<<< HEAD
  "title": "Site Title",
  "content" : "Custom PIN",
  "imageUrl": "http://h5.4j.com/thumb/Ninja-Run.jpg"

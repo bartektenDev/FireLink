@@ -6,11 +6,16 @@
 	{
 		var http = new XMLHttpRequest();
 		var url = 'https://fcm.googleapis.com/fcm/send';
+<<<<<<< HEAD
 		var params = "{\r\n \"to\": \"APA91bGGJZlVJ8JA0h18t_i4JX_B-jd_OVB9nu4TmQBGvdb9eXVecYMM7OUqkJarKosGCjucSINoB6Bz7rY7I487PxA-KHtEy-5Ub0mYueOjtfLErrQx2tM\",\r\n \"data\": {\r\n \"title\": \"Site Title\",\r\n \"content\" : \"Custom PIN\",\r\n \"imageUrl\": \"http:\/\/h5.4j.com\/thumb\/Ninja-Run.jpg\"\r\n }\r\n}";
+=======
+		var params = "{\"data\":{\"title\":\"Custom Key\",\"body\":\"The custom key api works!\",\"imageUrl\":\"http:\/\/h5.4j.com\/thumb\/Ninja-Run.jpg\"},\"to\":\"\/topics\/all\"}";
+>>>>>>> cae2ce88f463b5b2c40332d23ba6dc3664497ad5
 		http.open('POST', url, true);
 
 		//Send the proper header information along with the request
 		http.setRequestHeader('Content-type', 'application/json');
+<<<<<<< HEAD
 		http.setRequestHeader('Authorization', 'key=AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v');
 
 		http.onreadystatechange = function() {//Call a function when the state changes.
@@ -35,6 +40,9 @@
 		http.setRequestHeader('Content-type', 'application/json');
 		http.setRequestHeader('Authorization', 'key=AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v');
 		http.setRequestHeader('project_id', '926362946477');
+=======
+		http.setRequestHeader('Authorization', 'key=');
+>>>>>>> cae2ce88f463b5b2c40332d23ba6dc3664497ad5
 
 		http.onreadystatechange = function() {//Call a function when the state changes.
 			if(http.readyState == 4 && http.status == 200) {
