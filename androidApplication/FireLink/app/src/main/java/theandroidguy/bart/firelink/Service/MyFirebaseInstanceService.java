@@ -1,5 +1,10 @@
 package theandroidguy.bart.firelink.Service;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.media.session.MediaSession;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,8 +27,8 @@ This is required for sending to specific devices or for creating device groups.
 */
 public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
 
-    private static final String TAG = "MyFirebaseInstanceService";
-    private final static String PINSTR = "pin.txt";
+    private static final String TAG = "MyFirebaseInstService";
+    private final static String TOKENSTR = "token.txt";
 
     @Override
     public void onTokenRefresh() {
@@ -31,6 +36,7 @@ public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         FirebaseMessaging.getInstance().subscribeToTopic("all");
         Log.d(TAG, "Refreshed token: " + refreshedToken);
+        writeDownTOKEN(refreshedToken);
 
         /* If you want to send messages to this application instance or manage this apps subscriptions on the server side, send the Instance ID token to your app server.*/
 
@@ -38,7 +44,18 @@ public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
     }
 
     private void sendRegistrationToServer(String refreshedToken) {
-        Log.d("TOKEN ", refreshedToken.toString());
+        Log.d("TOKEN ", refreshedToken);
+    }
+
+    public void writeDownTOKEN(String TOKEN){
+        try {
+            OutputStreamWriter out = new OutputStreamWriter(openFileOutput(TOKENSTR, 0));
+            out.write(TOKEN);
+            config.readTOKEN = TOKEN;
+            out.close();
+        }
+        catch (Throwable t) {
+        }
     }
 
 }

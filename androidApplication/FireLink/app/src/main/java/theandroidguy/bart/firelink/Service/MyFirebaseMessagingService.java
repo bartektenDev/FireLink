@@ -12,14 +12,10 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Map;
 
 import theandroidguy.bart.firelink.Config.config;
@@ -28,7 +24,7 @@ import theandroidguy.bart.firelink.R;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-    private static final String TAG = "MyFirebaseMessagingService";
+    private static final String TAG = "MyFirebaseMsgService";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -42,7 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private void sendNotification(RemoteMessage remoteMessage){
         Map<String, String> data = remoteMessage.getData();
         config.title = data.get("title");
-        config.content = data.get("body");
+        config.content = data.get("content");
 
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
@@ -51,11 +47,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,0);
 
         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-<<<<<<< HEAD
         String NOTIFICATION_CHANNEL_ID = "firelistdefault";
-=======
-        String NOTIFICATION_CHANNEL_ID = "abc";
->>>>>>> cae2ce88f463b5b2c40332d23ba6dc3664497ad5
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             @SuppressLint("WrongConstant") NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notification", NotificationManager.IMPORTANCE_MAX);
@@ -71,9 +63,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
                 .setContentTitle(config.title)
+                .setSmallIcon(R.drawable.ic_launcher)
                 .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                        .bigText(config.content))
                 .setSound(defaultSound)
                 .setContentText(config.content)
                 .setContentIntent(pendingIntent)
@@ -82,7 +76,5 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
         notificationManager.notify(1, notificationBuilder.build());
-
-
     }
 }
