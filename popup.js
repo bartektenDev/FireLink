@@ -17,8 +17,8 @@ document.getElementById("sendDataBtn").addEventListener("click", sendData);
 
 function sendData()
 {
-  var serverToken = "";
-  var deviceToken = "";
+  var serverToken = "AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v";
+  var deviceToken = "cH5jFlzofgQ:APA91bHW9ATzD8QLz542kAR9MbajSy5bxIOnPqbWx0eWrj3JyqVr1FRYCKou1yEE2T6FD5wXvsWyTve3PSKgjXqeQBFehh-N38D1Qg5Ob_qaJYGu4holt3H09MvvcmEetnKPPL8nSe8h";
   var titleToDevice = currentTabTitle;
   var contentToDevice = currentTabUrl;
 

@@ -1,6 +1,8 @@
 body {
+  margin-right: 0px;
   display: grid;
   overflow: hidden;
+  margin-right: 60px;
 }
 
 #clickme  {

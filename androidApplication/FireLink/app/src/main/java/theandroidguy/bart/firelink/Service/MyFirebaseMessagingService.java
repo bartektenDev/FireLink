@@ -7,6 +7,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -27,6 +29,7 @@ import theandroidguy.bart.firelink.R;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
+    Bitmap largeIcon;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -70,24 +73,42 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationManager.createNotificationChannel(notificationChannel);
         }
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-                .setContentTitle(config.title)
-                .setSmallIcon(R.drawable.ic_launcher)
-                .setAutoCancel(true)
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(config.content))
-                .setSound(defaultSound)
-                .setContentText(config.content)
-                .setContentIntent(pendingIntent)
-                .addAction(R.mipmap.ic_launcher, "Open Link", actionIntent)
-                .setColor(Color.CYAN)
-                .setWhen(System.currentTimeMillis())
-                .setAutoCancel(true)
-                .setPriority(Notification.PRIORITY_DEFAULT);
+        if(config.content.startsWith("https://") || config.content.startsWith("http://")){
+            if(config.content.startsWith("https://www.google.com")){
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.google);
+            }else if(config.content.startsWith("https://www.youtube.com")){
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.youtube);
+            }else if(config.content.startsWith("https://github.com")){
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.github);
+            }else if(config.content.startsWith("https://mail.yahoo.com")){
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.yahoo);
+            }else if(config.content.startsWith("https://stackoverflow.com")){
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.stackoverflow);
+            }else if(config.content.startsWith("https://twitter.com")){
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.twitter);
+            }else{
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.defaultbrowse);
+            }
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
+                    .setContentTitle(config.title)
+                    .setSmallIcon(R.drawable.ic_launcher)
+                    .setLargeIcon(largeIcon)
+                    .setAutoCancel(true)
+                    .setStyle(new NotificationCompat.BigTextStyle()
+                            .bigText(config.content))
+                    .setSound(defaultSound)
+                    .setContentText(config.content)
+                    .setContentIntent(pendingIntent)
+                    .addAction(R.mipmap.ic_launcher, "Open Link", actionIntent)
+                    .setColor(Color.CYAN)
+                    .setWhen(System.currentTimeMillis())
+                    .setAutoCancel(true)
+                    .setPriority(Notification.PRIORITY_DEFAULT);
 
-        Random random = new Random();
-        int m = random.nextInt(9999 - 1000) + 1000;
+            Random random = new Random();
+            int m = random.nextInt(9999 - 1000) + 1000;
 
-        notificationManager.notify(m, notificationBuilder.build());
+            notificationManager.notify(m, notificationBuilder.build());
+        }
     }
 }

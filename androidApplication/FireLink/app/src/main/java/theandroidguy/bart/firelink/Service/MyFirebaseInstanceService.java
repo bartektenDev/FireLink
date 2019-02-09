@@ -36,7 +36,6 @@ public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         FirebaseMessaging.getInstance().subscribeToTopic("all");
         Log.d(TAG, "Refreshed token: " + refreshedToken);
-        writeDownTOKEN(refreshedToken);
 
         /* If you want to send messages to this application instance or manage this apps subscriptions on the server side, send the Instance ID token to your app server.*/
 
@@ -45,6 +44,7 @@ public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
 
     private void sendRegistrationToServer(String refreshedToken) {
         Log.d("TOKEN ", refreshedToken);
+        writeDownTOKEN(refreshedToken);
     }
 
     public void writeDownTOKEN(String TOKEN){
