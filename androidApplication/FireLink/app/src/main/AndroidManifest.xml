@@ -36,7 +36,11 @@
             </intent-filter>
         </service>
 
-        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode"/>
+        <receiver android:name=".NotificationReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_VIEW"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

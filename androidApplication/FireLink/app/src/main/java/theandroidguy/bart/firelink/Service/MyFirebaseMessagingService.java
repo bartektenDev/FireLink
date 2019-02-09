@@ -17,9 +17,11 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
+import java.util.Random;
 
 import theandroidguy.bart.firelink.Config.config;
 import theandroidguy.bart.firelink.MainActivity;
+import theandroidguy.bart.firelink.NotificationReceiver;
 import theandroidguy.bart.firelink.R;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
@@ -44,7 +46,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.putExtra("key", "value");
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,0);
+
+        Intent broadcastIntent = new Intent(this, NotificationReceiver.class);
+        broadcastIntent.putExtra("titleText", config.title);
+        broadcastIntent.putExtra("urlText", config.content);
+        PendingIntent actionIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         String NOTIFICATION_CHANNEL_ID = "firelistdefault";
@@ -53,11 +61,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             @SuppressLint("WrongConstant") NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notification", NotificationManager.IMPORTANCE_MAX);
 
             //Configure Notification Channel
-            notificationChannel.setDescription("Shared link is here");
+            notificationChannel.setDescription("Shared Link Notification");
             notificationChannel.enableLights(true);
             notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             notificationChannel.enableVibration(false);
-            notificationChannel.setLightColor(Color.BLACK);
+            notificationChannel.setLightColor(Color.WHITE);
 
             notificationManager.createNotificationChannel(notificationChannel);
         }
@@ -71,10 +79,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setSound(defaultSound)
                 .setContentText(config.content)
                 .setContentIntent(pendingIntent)
+                .addAction(R.mipmap.ic_launcher, "Open Link", actionIntent)
+                .setColor(Color.CYAN)
                 .setWhen(System.currentTimeMillis())
+                .setAutoCancel(true)
                 .setPriority(Notification.PRIORITY_DEFAULT);
 
+        Random random = new Random();
+        int m = random.nextInt(9999 - 1000) + 1000;
 
-        notificationManager.notify(1, notificationBuilder.build());
+        notificationManager.notify(m, notificationBuilder.build());
     }
 }

@@ -3,25 +3,34 @@
   "version": "1.0",
   "description": "Share links from your from Google Chrome to your Android device in seconds!",
   "background": {
-      "scripts": ["background.js"],
-      "persistent": false
-    },
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
   "browser_action": {
-      "default_popup": "popup.html",
-      "default_title": "FireLink",
-      "default_icon": {
-        "16": "images/web_hi_res_512.png",
-        "32": "images/web_hi_res_512.png",
-        "48": "images/web_hi_res_512.png",
-        "128": "images/web_hi_res_512.png"
-      }
-    },
+    "default_popup": "popup.html",
+    "default_title": "FireLink",
+    "default_icon": {
+      "16": "images/web_hi_res_512.png",
+      "32": "images/web_hi_res_512.png",
+      "48": "images/web_hi_res_512.png",
+      "128": "images/web_hi_res_512.png"
+    }
+  },
   "icons": {
       "16": "images/web_hi_res_512.png",
       "32": "images/web_hi_res_512.png",
       "48": "images/web_hi_res_512.png",
       "128": "images/web_hi_res_512.png"
-    },
-  "permissions": [ "tabs" ],
+  },
+  "permissions": [
+      "tabs"
+  ],
   "manifest_version": 2
 }
