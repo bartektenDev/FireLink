@@ -12,6 +12,8 @@ FireLink app.
 
 <img src="images/ext2.png" width="auto" height="auto"/>
 
+<img src="images/phonepreview.jpg" width="auto" height="auto"/>
+
 **How do I set it up?** 
 
 1. Open your git folder and open git bash and enter the following:
