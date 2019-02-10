@@ -1,7 +1,7 @@
 # FireLink
 <img src="images/web_hi_res_512.png" width="100px" height="100px"/>
 
-**Status**: Beta Stage 3
+**Status**: Beta Stage 5
 
 **What is it?** This is a chrome extension for sharing links immediately to the
 FireLink app.
