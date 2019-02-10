@@ -62,7 +62,7 @@ function sendData()
   http.open('POST', url, true);
 ```
 
-Then save the file and you're all set! Now just open the chrome://extensions/ tab again 
+6. Then save the file and you're all set! Now just open the chrome://extensions/ tab again 
 and on FireLink click the refresh icon to make sure everything is set. Now go to any 
 websites and click on the FireLink extension. You will see the title of the website 
 along with the link below it. Just click "send" and you will instantly recieve the 
