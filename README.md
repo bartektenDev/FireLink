@@ -46,8 +46,24 @@ refresh token: zFbjNWjsdu0:APz91bHsBir0dnnhUSsUqw8LWa79mA8O78q4tgvuBfUrl-9snpbv0
 We only need the value so copy that for the next step.
 
 5. In the root folder of FireLink open the popup.js file. Scroll down till you see the
-variable: deviceToken. In the quotations paste the token you copied. Then save the file
-and you're all set! Now just open the chrome://extensions/ tab again and on FireLink click
-the refresh icon to make sure everything is set. Now go to any websites and click on the
-FireLink extension. You will see the title of the website along with the link below it.
-Just click "send" and you will instantly recieve the notification on your device!
+variable: deviceToken. In the quotations paste the token you copied. 
+
+```sh
+function sendData()
+{
+  var serverToken = "AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v";
+  var deviceToken = "zFbjNWjsdu0:APz91bHsBir0dnnhUSsUqw8LWa79mA8O78q4tgvuBfUrl-9snpbv0-rd-kxe3ObFqrZkkf_AHjjGnmZvAyIowmqes9SJ7umWE3pnnBeCD26w0vPmFTzpiueHu7nfZAWX7HDLVH6p6upB";
+  var titleToDevice = currentTabTitle;
+  var contentToDevice = currentTabUrl;
+
+  var http = new XMLHttpRequest();
+  var url = 'https://fcm.googleapis.com/fcm/send';
+  var params = "{\r\n \"to\": \"" + deviceToken.toString() + "\",\r\n \"data\": {\r\n \"title\": \"" + titleToDevice.toString() + "\",\r\n \"content\" : \"" + contentToDevice.toString() + "\",\r\n \"imageUrl\": \"http:\/\/h5.4j.com\/thumb\/Ninja-Run.jpg\"\r\n }\r\n}";
+  http.open('POST', url, true);
+```
+
+Then save the file and you're all set! Now just open the chrome://extensions/ tab again 
+and on FireLink click the refresh icon to make sure everything is set. Now go to any 
+websites and click on the FireLink extension. You will see the title of the website 
+along with the link below it. Just click "send" and you will instantly recieve the 
+notification on your device!
