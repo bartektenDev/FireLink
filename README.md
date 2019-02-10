@@ -12,7 +12,7 @@ FireLink app.
 
 <img src="images/ext2.png" width="auto" height="auto"/>
 
-<img src="images/phonepreview.jpg" width="auto" height="auto"/>
+<img src="images/phonepreview.jpg" width="auto" height="900px"/>
 
 **How do I set it up?** 
 
