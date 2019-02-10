@@ -6,6 +6,12 @@
 **What is it?** This is a chrome extension for sharing links immediately to the
 FireLink app.
 
+**Preview Demo**
+
+<img src="images/ext1.png" width="auto" height="600px"/>
+
+<img src="images/ext2.png" width="auto" height="600px"/>
+
 **How do I set it up?** 
 
 1. Open your git folder and open git bash and enter the following:
