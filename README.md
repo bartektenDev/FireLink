@@ -41,5 +41,5 @@ We only need the value so copy that for the next step.
 variable: deviceToken. In the quotations paste the token you copied. Then save the file
 and you're all set! Now just open the chrome://extensions/ tab again and on FireLink click
 the refresh icon to make sure everything is set. Now go to any websites and click on the
-FireLink extensions. You will see the title of the website along with the link below it.
+FireLink extension. You will see the title of the website along with the link below it.
 Just click "send" and you will instantly recieve the notification on your device!
