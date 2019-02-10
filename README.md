@@ -8,9 +8,9 @@ FireLink app.
 
 **Preview Demo**
 
-<img src="images/ext1.png" width="auto" height="600px"/>
+<img src="images/ext1.png" width="auto" height="auto"/>
 
-<img src="images/ext2.png" width="auto" height="600px"/>
+<img src="images/ext2.png" width="auto" height="auto"/>
 
 **How do I set it up?** 
 
