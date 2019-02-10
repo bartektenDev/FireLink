@@ -59,7 +59,8 @@ function sendData()
   var http = new XMLHttpRequest();
   var url = 'https://fcm.googleapis.com/fcm/send';
   var params = "{\r\n \"to\": \"" + deviceToken.toString() + "\",\r\n \"data\": {\r\n \"title\": \"" + titleToDevice.toString() + "\",\r\n \"content\" : \"" + contentToDevice.toString() + "\",\r\n \"imageUrl\": \"http:\/\/h5.4j.com\/thumb\/Ninja-Run.jpg\"\r\n }\r\n}";
-  http.open('POST', url, true);...
+  http.open('POST', url, true);
+  ...
 ```
 
 6. Then save the file and you're all set! Now just open the chrome://extensions/ tab again 
