@@ -6,9 +6,7 @@
 **What is it?** This is a chrome extension for sharing links immediately to the
 FireLink app.
 
-**How do I set it up?** You can sign up at https://postmail.invotes.com/ and
-then use that API key for the chrome extension setup. After getting the API
-key, install FireLink.
+**How do I set it up?** 
 
 1. Open your git folder and open git bash and enter the following:
 
