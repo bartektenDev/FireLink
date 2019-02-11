@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         readToken();
 
-        //define what items do
+        
         reveal = findViewById(R.id.revealToken);
         reveal.setOnClickListener(new View.OnClickListener() {
             @Override
