@@ -1,0 +1,13 @@
+POST https://fcm.googleapis.com/fcm/send
+Content-Type: application/json
+Authorization: key=serverkey
+
+{
+    "notification": {
+        "title": "FireLink",
+        "body": "FireLink is the best!",
+        "click_action": "https://www.youtube.com/watch?v=CgrnJ_7KMpk",
+        "icon": "http://url-to-an-icon/icon.png"
+    },
+    "to": "webToken"
+}
