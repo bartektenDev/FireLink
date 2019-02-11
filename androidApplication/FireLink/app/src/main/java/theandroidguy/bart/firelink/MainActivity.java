@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
             }
             in.close();
             config.readTOKEN = buf.toString();
-        } catch (java.io.FileNotFoundException e){
+            } catch (java.io.FileNotFoundException e){
 
-        }
+            }
         catch (Throwable t){
 
         }
