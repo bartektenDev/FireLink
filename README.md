@@ -1,7 +1,7 @@
 # FireLink
 <img src="images/web_hi_res_512.png" width="100px" height="100px"/>
 
-**Status**: Beta Stage 5
+**Status**: Beta Stage 6
 
 **What is it?** This is a chrome extension for sharing links immediately to the
 FireLink app.
@@ -68,3 +68,14 @@ and on FireLink click the refresh icon to make sure everything is set. Now go to
 websites and click on the FireLink extension. You will see the title of the website 
 along with the link below it. Just click "send" and you will instantly recieve the 
 notification on your device!
+
+**What's being worked on?**
+- [ ] Working on making an easy set up for Windows/Mac and Android/iOS. 
+- [ ] Setup localhost on port 5000 the token retriever
+- [X] QR Scanner in FireLink app
+- [X] Read QR Code in FireLink app
+- [ ] Send "friend request" to QR Code from setup on main PC
+- [ ] Retrieve friend request from FireLink app
+- [ ] Read FROM token in the notification from the app. Both parties need to accept the
+"friend request" otherwise if it is denied from the computer setup, then the FireLink
+application will cancel and not allow the request to be made or completed.
