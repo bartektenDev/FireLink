@@ -71,7 +71,7 @@ notification on your device!
 
 **What's being worked on?**
 Working on making an easy set up for Windows/Mac and Android/iOS. 
-1. Setup localhost on port 5000 the token retriever [checkbox:unchecked]
+1. Setup localhost on port 5000 the token retriever  # [checkbox:checked]
 2. QR Scanner in FireLink app
 3. Read QR Code in FireLink app
 4. Send "friend request" to QR Code from setup on main PC
