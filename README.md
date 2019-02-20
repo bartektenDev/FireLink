@@ -71,11 +71,11 @@ notification on your device!
 
 **What's being worked on?**
 Working on making an easy set up for Windows/Mac and Android/iOS. 
-1. [x] Setup localhost on port 5000 the token retriever
-2. [x] QR Scanner in FireLink app
-3. [x] Read QR Code in FireLink app
-4. [] Send "friend request" to QR Code from setup on main PC
-5. [] Retrieve friend request from FireLink app
-6. [] Read FROM token in the notification from the app. Both parties need to accept the
+1.# [x] Setup localhost on port 5000 the token retriever
+2.# [x] QR Scanner in FireLink app
+3.# [x] Read QR Code in FireLink app
+4.# [] Send "friend request" to QR Code from setup on main PC
+5.# [] Retrieve friend request from FireLink app
+6.# [] Read FROM token in the notification from the app. Both parties need to accept the
 "friend request" otherwise if it is denied from the computer setup, then the FireLink
 application will cancel and not allow the request to be made or completed.
