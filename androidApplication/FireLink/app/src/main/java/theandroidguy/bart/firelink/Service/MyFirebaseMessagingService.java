@@ -111,4 +111,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             notificationManager.notify(m, notificationBuilder.build());
         }
     }
+
+    public void copylink(){
+
+    }
 }

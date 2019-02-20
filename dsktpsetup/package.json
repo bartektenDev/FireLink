@@ -1,0 +1,17 @@
+{
+  "name": "firelinkwinsetup",
+  "version": "1.0.0",
+  "description": "FireLink setup for windows",
+  "main": "main.js",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "electron": "^4.0.5"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Bart Tarasewicz",
+  "license": "ISC"
+}

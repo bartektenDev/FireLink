@@ -1,0 +1,11 @@
+<device1name>Bart's Desktop</device1name>
+<device1token>1234</device1token>
+<device1img>windesktop</device1img>
+
+<device2name>Bart's Windows Laptop</device2name>
+<device2token>5678</device2token>
+<device2img>winlaptop</device2img>
+
+<device3name>Bart's Macbook Pro</device3name>
+<device3token>9101</device3token>
+<device3img>maclaptop</device3img>

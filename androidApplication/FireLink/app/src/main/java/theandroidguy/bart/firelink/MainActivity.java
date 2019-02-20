@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -35,30 +37,36 @@ public class MainActivity extends AppCompatActivity {
 
         readToken();
 
-        
-        reveal = findViewById(R.id.revealToken);
-        reveal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Do not share this token:")
-                        .setMessage(config.readTOKEN)
-                        .setCancelable(false)
-                        .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Whatever...
-                            }
-                        }).show();
-            }
-        });
-        sendNotification = findViewById(R.id.sendBtn);
-        sendNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendPost();
-            }
-        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id==R.id.scannerActivityItem1){
+            //launch qr code scanner activity
+            Intent myIntent = new Intent(MainActivity.this, QRScanActivity.class);
+            MainActivity.this.startActivity(myIntent);
+        }
+        if(id==R.id.scannerActivityItem2){
+            //show token
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Only share this key with trusted sources:")
+                    .setMessage(config.readTOKEN)
+                    .setCancelable(false)
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Whatever...
+                        }
+                    }).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void readToken(){

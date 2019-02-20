@@ -8,42 +8,5 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/revealToken"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="112dp"
-        android:text="Reveal Token" />
-
-    <EditText
-        android:id="@+id/linkTextBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/revealToken"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Link" />
-
-    <Button
-        android:id="@+id/sendBtn"
-        android:layout_width="116dp"
-        android:layout_height="45dp"
-        android:layout_below="@+id/revealToken"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="23dp"
-        android:layout_toEndOf="@+id/linkTextBox"
-        android:text="Send" />
-</RelativeLayout>
+    tools:context=".MainActivity"/>
 

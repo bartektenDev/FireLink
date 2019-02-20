@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:title="Register New Device"
+        android:id="@+id/scannerActivityItem1"
+        app:showAsAction="never" />
+
+    <item
+        android:title="Show Device Token"
+        android:id="@+id/scannerActivityItem2"
+        app:showAsAction="never" />
+
+</menu>
