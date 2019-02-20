@@ -98,13 +98,13 @@ public class MainActivity extends AppCompatActivity {
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("POST");
                     conn.setRequestProperty("Content-Type", "application/json");
-                    conn.setRequestProperty("Authorization", "key=AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v");
+                    conn.setRequestProperty("Authorization", "key=");
                     conn.setDoOutput(true);
                     conn.setDoInput(true);
 
                     JSONObject jsonParam = new JSONObject();
                     jsonParam.put("title", "firelink");
-                    jsonParam.put("to", "dV8UabEm9U0:APA91bHzT0Wyx2X8EhZWbzCl6z_4ukgw6q5pXzwhLJ2Yx1I1erAqGFPcyqR7VM3WvoPrsocegAoKW7yUdYWx-6I5seVd32F5AzVos9T8CiS1Siy5Xs9utfEdckWPOWIoTsq2xeetDAmH");
+                    jsonParam.put("to", "");
 
                     Log.i("JSON", jsonParam.toString());
                     DataOutputStream os = new DataOutputStream(conn.getOutputStream());
