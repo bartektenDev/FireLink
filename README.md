@@ -10,12 +10,10 @@ FireLink app.
 
 <img src="images/ext1.png" width="auto" height="auto"/>
 <img src="images/ext2.png" width="auto" height="auto"/>
-<pp align="left">
+<pp align="center" margin="10px">
   <img src="images/phonepreview.jpg" width="auto" height="800px"/>                  
-</pp>
-<ppp align="right">
   <img src="images/previewautolaunch.jpg" width="auto" height="800px"/>
-</ppp>
+</pp>
 
 **How to set it up yourself!** 
 
