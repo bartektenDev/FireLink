@@ -14,7 +14,7 @@ FireLink app.
   <img src="images/phonepreview.jpg" width="410px" height="800px" align="left"/>                  
   <img src="images/previewautolaunch.jpg" width="410px" height="800px" align="right"/>
 </p>
-
+```
 <p2>
 **How to set it up yourself!** 
 
