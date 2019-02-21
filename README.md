@@ -14,60 +14,7 @@ FireLink app.
 
 <img src="images/phonepreview.jpg" width="auto" height="800px" align="left"/>                  <img src="images/previewautolaunch.jpg" width="auto" height="800px" align="right"/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 **How to set it up yourself!** 
 
 1. Open your git folder and open git bash and enter the following:
