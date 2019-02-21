@@ -5,17 +5,18 @@
 
 **What is it?** This is a chrome extension for sharing links immediately to the
 FireLink app.
----
+
 **Preview Demo**
 
+<p>
 <img src="images/ext1.png" width="auto" height="auto"/>
 
 <img src="images/ext2.png" width="auto" height="auto"/>
 
 <img src="images/phonepreview.jpg" width="300px" height="800px" align="left"/>                  
 <img src="images/previewautolaunch.jpg" width="300px" height="800px" align="right"/>
-
----
+</p>
+  
 **How to set it up yourself!** 
 
 1. Open your git folder and open git bash and enter the following:
