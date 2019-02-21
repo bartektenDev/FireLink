@@ -51,7 +51,7 @@ variable: deviceToken. In the quotations paste the token you copied.
 ```sh
 function sendData()
 {
-  var serverToken = "AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v";
+  var serverToken = "AAAA16-Iy60:APA291bHw6cYpz8coEl2aSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5x3Oa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v";
   var deviceToken = "zFbjNWjsdu0:APz91bHsBir0dnnhUSsUqw8LWa79mA8O78q4tgvuBfUrl-9snpbv0-rd-kxe3ObFqrZkkf_AHjjGnmZvAyIowmqes9SJ7umWE3pnnBeCD26w0vPmFTzpiueHu7nfZAWX7HDLVH6p6upB";
   var titleToDevice = currentTabTitle;
   var contentToDevice = currentTabUrl;
