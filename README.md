@@ -14,8 +14,8 @@ FireLink app.
 
 <img src="images/phonepreview.jpg" width="auto" height="800px" align="left"/>                  <img src="images/previewautolaunch.jpg" width="auto" height="800px" align="right"/>
 
-<div>
-**How do I set it up?** 
+
+**How to set it up yourself!** 
 
 1. Open your git folder and open git bash and enter the following:
 
@@ -81,4 +81,3 @@ notification on your device!
 - [ ] Read FROM token in the notification from the app. Both parties need to accept the
 "friend request" otherwise if it is denied from the computer setup, then the FireLink
 application will cancel and not allow the request to be made or completed.
-  </div>
