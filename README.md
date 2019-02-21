@@ -46,7 +46,8 @@ refresh token: zFbjNWjsdu0:APz91bHsBir0dnnhUSsUqw8LWa79mA8O78q4tgvuBfUrl-9snpbv0
 We only need the value so copy that for the next step.
 
 5. In the root folder of FireLink open the popup.js file. Scroll down till you see the
-variable: deviceToken. In the quotations paste the token you copied. 
+variable: deviceToken. In the quotations paste the token you copied. Here's an example
+how it should look.
 
 ```sh
 function sendData()
