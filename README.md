@@ -15,7 +15,7 @@ FireLink app.
   <img src="images/previewautolaunch.jpg" width="410px" height="800px" align="right"/>
 </p>
 
-<p>
+<p2>
 **How to set it up yourself!** 
 
 1. Open your git folder and open git bash and enter the following:
@@ -71,8 +71,8 @@ and on FireLink click the refresh icon to make sure everything is set. Now go to
 websites and click on the FireLink extension. You will see the title of the website 
 along with the link below it. Just click "send" and you will instantly recieve the 
 notification on your device!
-</p>
-<p>
+</p2>
+<p3>
 **What's being worked on?**
 - [ ] Working on making an easy set up for Windows/Mac and Android/iOS. 
 - [ ] Setup localhost on port 5000 the token retriever
@@ -83,4 +83,4 @@ notification on your device!
 - [ ] Read FROM token in the notification from the app. Both parties need to accept the
 "friend request" otherwise if it is denied from the computer setup, then the FireLink
 application will cancel and not allow the request to be made or completed.
-</p>
+</p3>
