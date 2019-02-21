@@ -31,6 +31,7 @@ public class QRScanActivity extends AppCompatActivity {
     TextView scannedText;
     BarcodeDetector barcodeDetector;
     private static final int MY_CAMERA_REQUEST_CODE = 100;
+    String[] colors = {"Delete Key", ""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,6 @@ public class QRScanActivity extends AppCompatActivity {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
                 if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-
                     return;
                 }
                 try {

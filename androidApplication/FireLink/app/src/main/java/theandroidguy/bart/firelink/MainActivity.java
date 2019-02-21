@@ -29,6 +29,8 @@ import theandroidguy.bart.firelink.Config.config;
 public class MainActivity extends AppCompatActivity {
 
     Button reveal, sendNotification;
+    final String[] Options = {"Delete Key", "Hide"};
+    AlertDialog.Builder window;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,16 +57,22 @@ public class MainActivity extends AppCompatActivity {
         }
         if(id==R.id.scannerActivityItem2){
             //show token
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("Only share this key with trusted sources:")
-                    .setMessage(config.readTOKEN)
-                    .setCancelable(false)
-                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Whatever...
-                        }
-                    }).show();
+            window = new AlertDialog.Builder(this);
+            window.setTitle("Pick a color");
+            window.setItems(Options, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if(which == 0){
+
+                    }else if(which == 1){
+
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Hmmm I messed up. I detected that you clicked on : " + which + "?", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+
+            window.show();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -81,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
             in.close();
             config.readTOKEN = buf.toString();
+            Toast.makeText(getApplicationContext(), "Found Existing Token", Toast.LENGTH_LONG).show();
             } catch (java.io.FileNotFoundException e){
 
             }
