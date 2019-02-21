@@ -11,7 +11,7 @@ FireLink app.
 <img src="images/ext1.png" width="auto" height="auto"/>
 <img src="images/ext2.png" width="auto" height="auto"/>
 
-Solarized dark             |  Solarized Ocean
+Recieve Notification       |  Open Link (detects what the link is to which app!)
 :-------------------------:|:-------------------------:
 ![](images/phonepreview.jpg)  |  ![](images/previewautolaunch.jpg)
 
