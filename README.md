@@ -5,7 +5,7 @@
 
 **What is it?** This is a chrome extension for sharing links immediately to the
 FireLink app.
-
+---
 **Preview Demo**
 
 <img src="images/ext1.png" width="auto" height="auto"/>
