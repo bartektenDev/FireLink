@@ -12,8 +12,8 @@ FireLink app.
 <img src="images/ext2.png" width="auto" height="auto"/>
 
 <pp>
-  <img src="images/phonepreview.jpg" width="auto" height="800px"/>                  
-  <img src="images/previewautolaunch.jpg" width="auto" height="800px"/>
+<img src="images/phonepreview.jpg" width="auto" height="800px"/>                  
+<img src="images/previewautolaunch.jpg" width="auto" height="800px"/>
 </pp>
 
 **How to set it up yourself!** 
