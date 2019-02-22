@@ -8,11 +8,15 @@ FireLink app.
 
 **Preview Demo**
 
-gfdgfd                                 | fdsfdsf
-:-------------------------:|:-------------------------:
-![](images/ext1.png)  |  ![](images/ext2.png)
+Step 1. Click on the FireLink extension
+:-------------------------:
+![](images/ext1.png)
 
-Recieve Notification       |  Open Link (detects what the link is to which app!)
+Step 2. Click send 
+:-------------------------:
+![](images/ext2.png)
+
+Step 3. Recieve Notification       |  Step 4. Open Link (detects what the link is to which app!)
 :-------------------------:|:-------------------------:
 ![](images/phonepreview.jpg)  |  ![](images/previewautolaunch.jpg)
 
