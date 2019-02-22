@@ -7,7 +7,8 @@
 FireLink app.
 
 **Preview Demo**
-Click on FireLink Extension fdfsdfdsfds
+
+gfdgfd                                 | fdsfdsf
 :-------------------------:|:-------------------------:
 ![](images/ext1.png)  |  ![](images/ext2.png)
 
