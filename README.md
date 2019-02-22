@@ -9,8 +9,8 @@ FireLink app.
 **Preview Demo**
 Click on FireLink Extension fdfsdfdsfds
 :-------------------------:|:-------------------------:
-<img src="images/ext1.png" width="auto" height="auto"/>
-<img src="images/ext2.png" width="auto" height="auto"/>
+![](images/ext1.png)  |  ![](images/ext2.png)
+
 Recieve Notification       |  Open Link (detects what the link is to which app!)
 :-------------------------:|:-------------------------:
 ![](images/phonepreview.jpg)  |  ![](images/previewautolaunch.jpg)
