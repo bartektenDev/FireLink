@@ -12,7 +12,7 @@ Step 1. Click on the FireLink extension
 :-------------------------:
 ![](images/ext1.png)
 
-Step 2. Click send 
+Step 2. Click send (so fast less than 2s)
 :-------------------------:
 ![](images/ext2.png)
 
