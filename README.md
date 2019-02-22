@@ -2,8 +2,7 @@
 
 **Status**: Beta Stage 6
 
-**What is it?** This is a chrome extension for sharing links immediately to the
-FireLink app.
+**What is it?** This is a chrome extension for sharing links immediately to your mobile device!
 
 **Preview Demo**
 
