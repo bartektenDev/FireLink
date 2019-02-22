@@ -20,9 +20,6 @@ Step 3. Recieve Notification       |  Step 4. Open Link (detects what the link i
 :-------------------------:|:-------------------------:
 ![](images/phonepreview.jpg)  |  ![](images/previewautolaunch.jpg)
 
-<img src="images/phonepreview.jpg" width="auto" height="800px"/>                  
-<img src="images/previewautolaunch.jpg" width="auto" height="800px"/>
-
 **How to set it up yourself!** 
 
 1. Open your git folder and open git bash and enter the following:
