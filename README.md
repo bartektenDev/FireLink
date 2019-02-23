@@ -1,20 +1,24 @@
-# FireLink
-<img src="images/web_hi_res_512.png" width="100px" height="100px"/>
+# FireLink <img src="images/web_hi_res_512.png" width="100px" height="100px" align="right"/>
 
 **Status**: Beta Stage 6
 
-**What is it?** This is a chrome extension for sharing links immediately to the
-FireLink app.
+**What is it?** This is a chrome extension for sharing links immediately to your mobile device!
 
 **Preview Demo**
 
-<img src="images/ext1.png" width="auto" height="auto"/>
+Step 1. Click on the FireLink extension
+:-------------------------:
+![](images/ext1.png)
 
-<img src="images/ext2.png" width="auto" height="auto"/>
+Step 2. Click send (so fast less than 2s)
+:-------------------------:
+![](images/ext2.png)
 
-<img src="images/phonepreview.jpg" width="auto" height="800px"/>                  <img src="images/previewautolaunch.jpg" width="auto" height="800px"/>
+Step 3. Recieve Notification       |  Step 4. Open Link (detects what the link is to which app!)
+:-------------------------:|:-------------------------:
+![](images/phonepreview.jpg)  |  ![](images/previewautolaunch.jpg)
 
-**How do I set it up?** 
+**How to set it up yourself!** 
 
 1. Open your git folder and open git bash and enter the following:
 
@@ -46,7 +50,8 @@ refresh token: zFbjNWjsdu0:APz91bHsBir0dnnhUSsUqw8LWa79mA8O78q4tgvuBfUrl-9snpbv0
 We only need the value so copy that for the next step.
 
 5. In the root folder of FireLink open the popup.js file. Scroll down till you see the
-variable: deviceToken. In the quotations paste the token you copied. 
+variable: deviceToken. In the quotations paste the token you copied. Here's an example
+how it should look.
 
 ```sh
 function sendData()
@@ -75,7 +80,7 @@ notification on your device!
 - [X] QR Scanner in FireLink app
 - [X] Read QR Code in FireLink app
 - [ ] Send "friend request" to QR Code from setup on main PC
-- [ ] Retrieve friend request from FireLink app
+- [ ] Retrieve "friend request" from FireLink app
 - [ ] Read FROM token in the notification from the app. Both parties need to accept the
 "friend request" otherwise if it is denied from the computer setup, then the FireLink
 application will cancel and not allow the request to be made or completed.
