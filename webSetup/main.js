@@ -4,7 +4,18 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
-const { setup: setupPushReceiver } = require('electron-push-receiver');
+var exec = require('child_process').exec
+function Callback(err, stdout, stderr) {
+    if (err) {
+        //console.log(`exec error: ${err}`);
+        console.log('We ran into a problem! Make sure you are not already running the FireLink application! If you are, please close this window.');
+        return;
+    }else{
+        console.log(`${stdout}`);
+    }
+}
+
+res = exec('http-server -u 127.0.0.1 -p 5000', Callback);
 
 const path = require('path')
 const url = require('url')
@@ -17,21 +28,24 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 1200, height: 900})
 
-  // Initialize electron-push-receiver component. Should be called before 'did-finish-load'
-  setupPushReceiver(mainWindow.webContents);
+  mainWindow.webContents.session.clearCache(function(){
+  //some callback.
+  });
 
-  // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  mainWindow.loadURL('127.0.0.1:5000')
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
 
+  mainWindow.webContents.on('did-fail-load', function() {
+    console.log('failed');
+    //retry until we load
+
+  });
+
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
+    res = exec('', Callback);
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
@@ -60,6 +74,3 @@ app.on('activate', function () {
     createWindow()
   }
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
