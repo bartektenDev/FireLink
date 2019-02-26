@@ -1,6 +1,6 @@
 # FireLink <img src="images/web_hi_res_512.png" width="100px" height="100px" align="right"/>
 
-**Status**: Beta Stage 6
+**Status**: Beta Stage 7
 
 **What is it?** This is a chrome extension for sharing links immediately to your mobile device!
 
