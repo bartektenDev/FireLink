@@ -1,0 +1,43 @@
+<html>
+<title>FireLink - PC Key</title>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Pragati+Narrow');
+
+    div {
+        margin-bottom: 15px;
+    }
+    #background {
+      background-image: linear-gradient(to right, #f7b733, #fc4a1a);
+    }
+    #token  {
+      text-align: center;
+      max-width: 400px;
+    }
+    #contents {
+      color: #000;
+      text-align:center;
+      font-family: 'Pragati Narrow', sans-serif;
+    }
+</style>
+<body id="background" onload="pageload()">
+  <div id="contents">
+      <h1>FireLink Setup</h1>
+      <div>
+        This Device Key:
+      </div>
+      <div>
+        <textarea id="token" rows="5" cols="45" /></textarea>
+      </div>
+      <div id="msg"></div>
+      <div id="notis"></div>
+      <div id="err"></div>
+      <div>
+        <img id="tokenImage1" src="none" />
+      </div>
+      <button id="newToken">Generate New Key</button>
+      <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+      <script src="token.js"></script>
+      <script src="loaded.js"></script>
+    </div>
+  </body>
+</html>
