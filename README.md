@@ -1,6 +1,7 @@
 # FireLink <img src="images/web_hi_res_512.png" width="100px" height="100px" align="right"/>
 
 **Status**: Beta Stage 7
+
 There are a total of 9 steps. 7 out of 9 work.
 
 **What is it?** This is a chrome extension for sharing links immediately to your mobile device!
