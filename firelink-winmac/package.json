@@ -1,0 +1,25 @@
+{
+  "name": "firelink-winmac",
+  "version": "1.0.0",
+  "description": "FireLink setup for PC",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "electron .",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartektenDev/FireLink-WinMac.git"
+  },
+  "keywords": [
+    "firelinksetup"
+  ],
+  "author": "Bart Tarasewicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bartektenDev/FireLink-WinMac/issues"
+  },
+  "homepage": "https://github.com/bartektenDev/FireLink-WinMac#readme"
+}
