@@ -78,9 +78,15 @@ now you and your PC can communicate back and forth to share links! You
 can close the tab with the FireLink setup () and you can close the 
 FireLink software that's running, but **DO NOT QUIT IT FROM RUNNING**.
 If you quit the application from running then your PC will **NOT** recieve
-any notifications if links are shared from the mobile device!
+any notifications if links are shared from the mobile device, but you
+will be able to send notifications from your PC to your mobile device 
+without a problem.
 
-
+9. Final step to see if all is working well, go to any website, but the
+URL must begin with either http:// or https:// . Then click on the FireLink
+extension in your main web browser and click **send**. DING! You got a notification
+from your PC onto your mobile device. Enjoy! I wouldn't mind a donation
+for a cup of coffee :)
 
 
 **What's being worked on?**
