@@ -93,7 +93,7 @@ for a cup of coffee :)
 
 **What's being worked on?**
 
-*Supported Devices:*
+*Supported Operating Systems:*
 - [X] Windows
 - [X] Mac OS
 - [X] Linux
