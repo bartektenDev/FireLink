@@ -92,7 +92,13 @@ for a cup of coffee :)
 
 
 **What's being worked on?**
-- [ ] Working on making an easy set up for Windows/Mac and Android/iOS. 
+Supported Devices:
+- [ ] Windows
+- [ ] Mac OS
+- [ ] Linux
+- [ ] Android
+- [ ] iOS
+Other Features:
 - [X] Setup localhost on port 5000 the token retriever
 - [X] QR Scanner in FireLink app
 - [X] Read QR Code in FireLink app
