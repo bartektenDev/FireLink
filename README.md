@@ -92,13 +92,15 @@ for a cup of coffee :)
 
 
 **What's being worked on?**
-Supported Devices:
-- [ ] Windows
-- [ ] Mac OS
-- [ ] Linux
-- [ ] Android
+
+*Supported Devices:*
+- [X] Windows
+- [X] Mac OS
+- [X] Linux
+- [X] Android
 - [ ] iOS
-Other Features:
+
+*Other Features:*
 - [X] Setup localhost on port 5000 the token retriever
 - [X] QR Scanner in FireLink app
 - [X] Read QR Code in FireLink app
