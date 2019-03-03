@@ -72,24 +72,19 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigation_shop:
-                    toolbar.setTitle("Shop");
+                case R.id.navigation_recieved:
+                    toolbar.setTitle("Recieved");
                     fragment = new theandroidguy.bart.firelink.fragment.StoreFragment();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_gifts:
-                    toolbar.setTitle("My Gifts");
+                case R.id.navigation_send:
+                    toolbar.setTitle("Send");
                     fragment = new theandroidguy.bart.firelink.fragment.GiftsFragment();
                     loadFragment(fragment);
                     return true;
-                case R.id.navigation_cart:
-                    toolbar.setTitle("Cart");
+                case R.id.navigation_pref:
+                    toolbar.setTitle("Preferences");
                     fragment = new theandroidguy.bart.firelink.fragment.CartFragment();
-                    loadFragment(fragment);
-                    return true;
-                case R.id.navigation_profile:
-                    toolbar.setTitle("Profile");
-                    fragment = new theandroidguy.bart.firelink.fragment.ProfileFragment();
                     loadFragment(fragment);
                     return true;
             }

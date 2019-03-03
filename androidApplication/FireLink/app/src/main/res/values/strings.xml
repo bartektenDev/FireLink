@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">FireLink</string>
-    <string name="title_shop">Shop</string>
-    <string name="title_gifts">Gifts</string>
-    <string name="title_cart">Cart</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_recieved">Recieved</string>
+    <string name="title_sent">Send</string>
+    <string name="title_pref">Preferences</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>

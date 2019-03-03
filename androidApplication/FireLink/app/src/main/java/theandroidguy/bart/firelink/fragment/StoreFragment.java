@@ -27,6 +27,10 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +41,8 @@ import theandroidguy.bart.firelink.R;
 public class StoreFragment extends Fragment {
 
     private static final String TAG = StoreFragment.class.getSimpleName();
-
+    //saved devices json
+    private final static String DEVICES = "devices.txt";
     // url to fetch shopping items
     private static final String URL = "https://api.androidhive.info/json/movies_2017.json";
 
@@ -61,6 +66,8 @@ public class StoreFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,7 +78,7 @@ public class StoreFragment extends Fragment {
         itemsList = new ArrayList<>();
         mAdapter = new StoreAdapter(getActivity(), itemsList);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 3);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(8), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
