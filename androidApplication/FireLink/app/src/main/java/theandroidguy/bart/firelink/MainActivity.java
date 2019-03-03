@@ -6,12 +6,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -22,6 +31,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import theandroidguy.bart.firelink.Config.config;
 
@@ -31,14 +41,74 @@ public class MainActivity extends AppCompatActivity {
     Button reveal, sendNotification;
     final String[] Options = {"Delete Key", "Hide"};
     AlertDialog.Builder window;
+    private ActionBar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        toolbar = getSupportActionBar();
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        // attaching bottom sheet behaviour - hide / show on scroll
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
+        layoutParams.setBehavior(new info.androidhive.bottomnavigation.helper.BottomNavigationBehavior());
+
+        // load the store fragment by default
+        toolbar.setTitle("Shop");
+        loadFragment(new theandroidguy.bart.firelink.fragment.StoreFragment());
+
         readToken();
 
+    }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment;
+            switch (item.getItemId()) {
+                case R.id.navigation_shop:
+                    toolbar.setTitle("Shop");
+                    fragment = new theandroidguy.bart.firelink.fragment.StoreFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_gifts:
+                    toolbar.setTitle("My Gifts");
+                    fragment = new theandroidguy.bart.firelink.fragment.GiftsFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_cart:
+                    toolbar.setTitle("Cart");
+                    fragment = new theandroidguy.bart.firelink.fragment.CartFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_profile:
+                    toolbar.setTitle("Profile");
+                    fragment = new theandroidguy.bart.firelink.fragment.ProfileFragment();
+                    loadFragment(fragment);
+                    return true;
+            }
+
+            return false;
+        }
+    };
+
+    /**
+     * loading fragment into FrameLayout
+     *
+     * @param fragment
+     */
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     @Override
