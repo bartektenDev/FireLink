@@ -1,0 +1,37 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="theandroidguy.bart.firelink.fragment.PreferencesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/showToke"
+            android:layout_width="221dp"
+            android:layout_height="61dp"
+            android:layout_below="@+id/registerDevice"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="94dp"
+            android:text="Show Device Token" />
+
+        <Button
+            android:id="@+id/registerDevice"
+            android:layout_width="221dp"
+            android:layout_height="61dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="95dp"
+            android:text="Register New Device" />
+
+    </RelativeLayout>
+</FrameLayout>

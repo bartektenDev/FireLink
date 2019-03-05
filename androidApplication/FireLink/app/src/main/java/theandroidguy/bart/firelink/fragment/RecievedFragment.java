@@ -27,10 +27,6 @@ import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,9 +34,9 @@ import theandroidguy.bart.firelink.MyApplication;
 import theandroidguy.bart.firelink.Movie;
 import theandroidguy.bart.firelink.R;
 
-public class StoreFragment extends Fragment {
+public class RecievedFragment extends Fragment {
 
-    private static final String TAG = StoreFragment.class.getSimpleName();
+    private static final String TAG = RecievedFragment.class.getSimpleName();
     //saved devices json
     private final static String DEVICES = "devices.txt";
     // url to fetch shopping items
@@ -50,12 +46,12 @@ public class StoreFragment extends Fragment {
     private List<Movie> itemsList;
     private StoreAdapter mAdapter;
 
-    public StoreFragment() {
+    public RecievedFragment() {
         // Required empty public constructor
     }
 
-    public static StoreFragment newInstance(String param1, String param2) {
-        StoreFragment fragment = new StoreFragment();
+    public static RecievedFragment newInstance(String param1, String param2) {
+        RecievedFragment fragment = new RecievedFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -72,7 +68,7 @@ public class StoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_store, container, false);
+        View view = inflater.inflate(R.layout.fragment_recieved, container, false);
 
         recyclerView = view.findViewById(R.id.recycler_view);
         itemsList = new ArrayList<>();

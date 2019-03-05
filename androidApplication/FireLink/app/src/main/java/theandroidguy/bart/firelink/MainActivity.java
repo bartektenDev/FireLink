@@ -3,7 +3,6 @@ package theandroidguy.bart.firelink;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
@@ -16,11 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -31,16 +26,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
 import theandroidguy.bart.firelink.Config.config;
+import theandroidguy.bart.firelink.fragment.RecievedFragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    Button reveal, sendNotification;
-    final String[] Options = {"Delete Key", "Hide"};
-    AlertDialog.Builder window;
     private ActionBar toolbar;
 
     @Override
@@ -50,16 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = getSupportActionBar();
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // attaching bottom sheet behaviour - hide / show on scroll
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
-        layoutParams.setBehavior(new info.androidhive.bottomnavigation.helper.BottomNavigationBehavior());
+        layoutParams.setBehavior(new theandroidguy.bart.firelink.helper.BottomNavigationBehavior());
 
         // load the store fragment by default
-        toolbar.setTitle("Shop");
-        loadFragment(new theandroidguy.bart.firelink.fragment.StoreFragment());
+        toolbar.setTitle("Recieved");
+        loadFragment(new RecievedFragment());
 
         readToken();
 
@@ -74,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_recieved:
                     toolbar.setTitle("Recieved");
-                    fragment = new theandroidguy.bart.firelink.fragment.StoreFragment();
+                    fragment = new RecievedFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_send:
@@ -84,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_pref:
                     toolbar.setTitle("Preferences");
-                    fragment = new theandroidguy.bart.firelink.fragment.CartFragment();
+                    fragment = new theandroidguy.bart.firelink.fragment.PreferencesFragment();
                     loadFragment(fragment);
                     return true;
             }
@@ -104,42 +96,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-        if(id==R.id.scannerActivityItem1){
-            //launch qr code scanner activity
-            Intent myIntent = new Intent(MainActivity.this, QRScanActivity.class);
-            MainActivity.this.startActivity(myIntent);
-        }
-        if(id==R.id.scannerActivityItem2){
-            //show token
-            window = new AlertDialog.Builder(this);
-            window.setTitle("Pick a color");
-            window.setItems(Options, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    if(which == 0){
-
-                    }else if(which == 1){
-
-                    }else{
-                        Toast.makeText(getApplicationContext(), "Hmmm I messed up. I detected that you clicked on : " + which + "?", Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
-
-            window.show();
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     public void readToken(){

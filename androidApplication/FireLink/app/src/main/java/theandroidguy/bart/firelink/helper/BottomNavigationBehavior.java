@@ -1,4 +1,4 @@
-package info.androidhive.bottomnavigation.helper;
+package theandroidguy.bart.firelink.helper;
 
 import android.content.Context;
 import android.support.design.widget.BottomNavigationView;
@@ -36,9 +36,9 @@ public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomN
     @Override
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, BottomNavigationView child, View target, int dx, int dy, int[] consumed) {
         if (dy < 0) {
-            showBottomNavigationView(child);
+            //showBottomNavigationView(child);
         } else if (dy > 0) {
-            hideBottomNavigationView(child);
+            //hideBottomNavigationView(child);
         }
     }
 
