@@ -2,6 +2,7 @@ package theandroidguy.bart.firelink;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -14,9 +15,12 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -31,12 +35,14 @@ public class QRScanActivity extends AppCompatActivity {
     TextView scannedText;
     BarcodeDetector barcodeDetector;
     private static final int MY_CAMERA_REQUEST_CODE = 100;
-    String[] colors = {"Delete Key", ""};
+    String positioning;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qrscan);
+        setContentView(R.layout.activity_scan);
+
+        positioning = getIntent().getStringExtra("whichpos");
 
         if (checkSelfPermission(Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -92,16 +98,26 @@ public class QRScanActivity extends AppCompatActivity {
                     scannedText.post(new Runnable() {
                         @Override
                         public void run() {
-                            surfaceView.setVisibility(View.INVISIBLE);
+                            cameraSource.stop();
+                            //surfaceView.setVisibility(View.INVISIBLE);
                             scannedText.setText("Scanning...");
+
+                            Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                            vibrator.vibrate(120);
                             Handler handler = new Handler();
                             handler.postDelayed(new Runnable() {
                                 public void run() {
-                                    Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-                                    vibrator.vibrate(120);
                                     scannedText.setText(qrCodes.valueAt(0).displayValue);
+                                    if(scannedText.getText().toString().length() == 152){
+                                        //qr code looks to be valid unless the user found out how we work. then we're fucked lol
+                                        Intent intent = new Intent(getBaseContext(), PickDeviceTypeActivity.class);
+                                        intent.putExtra("positioning", positioning);
+                                        intent.putExtra("deviceScannedKey", scannedText.getText().toString());
+                                        startActivity(intent);
+                                        finish();
+                                    }
                                 }
-                            }, 3000);
+                            }, 500);
                         }
                     });
                 }
@@ -118,9 +134,9 @@ public class QRScanActivity extends AppCompatActivity {
 
         if (requestCode == MY_CAMERA_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Camera Permission Granted!", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Camera Permission Denied!", Toast.LENGTH_LONG).show();
                 finish();
             }
 

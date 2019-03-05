@@ -1,8 +1,7 @@
 package theandroidguy.bart.firelink;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
@@ -13,9 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -28,7 +25,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import theandroidguy.bart.firelink.Config.config;
+import theandroidguy.bart.firelink.fragment.PreferencesFragment;
 import theandroidguy.bart.firelink.fragment.RecievedFragment;
+import theandroidguy.bart.firelink.fragment.SendFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //new android devices need app to ask for permissions
+        if (shouldAskPermissions()) {
+            askPermissions();
+        }
 
         toolbar = getSupportActionBar();
 
@@ -57,6 +61,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    protected boolean shouldAskPermissions() {
+        return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
+
+    @TargetApi(23)
+    protected void askPermissions() {
+        String[] permissions = {
+                "android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE"
+        };
+        int requestCode = 200;
+        requestPermissions(permissions, requestCode);
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -71,12 +89,15 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_send:
                     toolbar.setTitle("Send");
-                    fragment = new theandroidguy.bart.firelink.fragment.GiftsFragment();
+                    fragment = new SendFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_pref:
                     toolbar.setTitle("Preferences");
-                    fragment = new theandroidguy.bart.firelink.fragment.PreferencesFragment();
+                    fragment = new PreferencesFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("deviceKey", config.readTOKEN);
+                    fragment.setArguments(bundle);
                     loadFragment(fragment);
                     return true;
             }
@@ -110,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             }
             in.close();
             config.readTOKEN = buf.toString();
-            Toast.makeText(getApplicationContext(), "Found Existing Token", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Found Existing Token", Toast.LENGTH_LONG).show();
             } catch (java.io.FileNotFoundException e){
 
             }
