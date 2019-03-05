@@ -1,6 +1,8 @@
 package theandroidguy.bart.firelink.fragment;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +22,7 @@ import theandroidguy.bart.firelink.R;
 
 public class PreferencesFragment extends Fragment {
 
+    String secret;
     Button showToken;
 
     public PreferencesFragment() {
@@ -44,7 +47,7 @@ public class PreferencesFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_pref, container, false);
 
-        final String secret = getArguments().getString("deviceKey");
+        secret = getArguments().getString("deviceKey");
 
         showToken = rootView.findViewById(R.id.showToke);
 
@@ -55,13 +58,20 @@ public class PreferencesFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which){
-                            case DialogInterface.BUTTON_POSITIVE:
+                                case DialogInterface.BUTTON_POSITIVE:
                                 //Get new key button clicked
-                                break;
+                                    break;
 
-                            case DialogInterface.BUTTON_NEGATIVE:
-                                //Hide key button clicked
-                                break;
+                                case DialogInterface.BUTTON_NEGATIVE:
+                                //Copy
+                                    ClipboardManager clipMan = (ClipboardManager) getActivity().getSystemService(getActivity().getApplicationContext().CLIPBOARD_SERVICE);
+                                    ClipData clip = ClipData.newPlainText("key", secret);
+                                    clipMan.setPrimaryClip(clip);
+                                    break;
+
+                                case DialogInterface.BUTTON_NEUTRAL:
+                                    //Hide
+                                    break;
                         }
                     }
                 };
@@ -69,7 +79,8 @@ public class PreferencesFragment extends Fragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Device Key");
                 builder.setMessage(secret).setPositiveButton("Generate New Key", dialogClickListener)
-                        .setNegativeButton("Hide", dialogClickListener).show();
+                        .setNeutralButton("Hide", dialogClickListener)
+                        .setNegativeButton("Copy", dialogClickListener).show();
             }
         });
 

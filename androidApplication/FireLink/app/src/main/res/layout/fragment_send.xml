@@ -10,58 +10,8 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cardview3"
-            android:layout_width="330dp"
-            android:layout_height="160dp"
-            android:layout_below="@+id/autocopyswitch"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="370dp"
-            android:layout_marginEnd="30dp"
-            android:padding="16dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/card3image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/add" />
-
-                <TextView
-                    android:id="@+id/card3devicename"
-                    android:layout_width="195dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="39dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_toEndOf="@+id/card3image"
-                    android:text="Device Name" />
-
-                <TextView
-                    android:id="@+id/card3os"
-                    android:layout_width="195dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/card3devicename"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_toEndOf="@+id/card3image" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardview2"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            card_view:cardCornerRadius="18dp"
             android:layout_width="330dp"
             android:layout_height="160dp"
             android:layout_below="@+id/autocopyswitch"
@@ -72,43 +22,178 @@
             android:layout_marginEnd="30dp"
             android:padding="16dp">
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
+                card_view:cardCornerRadius="18dp"
+                android:id="@+id/cardview2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="160dp"
+                android:layout_below="@+id/autocopyswitch"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:padding="16dp">
 
-                <ImageView
-                    android:id="@+id/card2image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/add" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/card2devicename"
-                    android:layout_width="195dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="39dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_toEndOf="@+id/card2image"
-                    android:text="Device Name" />
+                    <ImageView
+                        android:id="@+id/card2image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/add" />
 
-                <TextView
-                    android:id="@+id/card2os"
-                    android:layout_width="195dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/card2devicename"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_toEndOf="@+id/card2image" />
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/card2devicename"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="39dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_toEndOf="@+id/card2image"
+                        android:text="Device Name" />
+
+                    <TextView
+                        android:id="@+id/card2os"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card2devicename"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_toEndOf="@+id/card2image" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            card_view:cardCornerRadius="18dp"
+            android:layout_width="330dp"
+            android:layout_height="160dp"
+            android:layout_below="@+id/autocopyswitch"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:padding="16dp">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                card_view:cardCornerRadius="18dp"
+                android:id="@+id/cardview1"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_below="@+id/autocopyswitch"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/card1image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/add" />
+
+                    <TextView
+                        android:id="@+id/card1devicename"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="39dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_toEndOf="@+id/card1image"
+                        android:text="Device Name" />
+
+                    <TextView
+                        android:id="@+id/card1os"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card1devicename"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_toEndOf="@+id/card1image" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="330dp"
+            android:layout_height="160dp"
+            android:layout_below="@+id/autocopyswitch"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="370dp"
+            android:layout_marginEnd="30dp"
+            android:padding="16dp"
+            card_view:cardCornerRadius="18dp">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                card_view:cardCornerRadius="18dp"
+                android:id="@+id/cardview3"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/card3image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/add" />
+
+                    <TextView
+                        android:id="@+id/card3devicename"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="39dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_toEndOf="@+id/card3image"
+                        android:text="Device Name" />
+
+                    <TextView
+                        android:id="@+id/card3os"
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card3devicename"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="18dp"
+                        android:layout_toEndOf="@+id/card3image" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
         </android.support.v7.widget.CardView>
 
         <Switch
@@ -121,57 +206,6 @@
             android:layout_marginTop="16dp"
             android:checked="true"
             android:text="Auto Copy from Clipboard" />
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cardview1"
-            android:layout_width="330dp"
-            android:layout_height="160dp"
-            android:layout_below="@+id/autocopyswitch"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:padding="16dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/card1image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="30dp"
-                    android:src="@drawable/add" />
-
-                <TextView
-                    android:id="@+id/card1devicename"
-                    android:layout_width="195dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="39dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_toEndOf="@+id/card1image"
-                    android:text="Device Name" />
-
-                <TextView
-                    android:id="@+id/card1os"
-                    android:layout_width="195dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/card1devicename"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_toEndOf="@+id/card1image" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
 
     </RelativeLayout>
 </FrameLayout>

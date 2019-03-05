@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -56,6 +57,15 @@ public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
         }
         catch (Throwable t) {
         }
+    }
+
+    public void push(){
+        FirebaseMessaging fm = FirebaseMessaging.getInstance();
+        fm.send(new RemoteMessage.Builder("926362946477" + "@gcm.googleapis.com")
+                .setMessageId(Integer.toString(1))
+                .addData("my_message", "Hello World")
+                .addData("my_action","SAY_HELLO")
+                .build());
     }
 
 }

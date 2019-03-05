@@ -19,7 +19,7 @@
             android:layout_marginStart="95dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="94dp"
-            android:text="Show Device Token" />
+            android:text="Show This Device Key" />
 
     </RelativeLayout>
 </FrameLayout>

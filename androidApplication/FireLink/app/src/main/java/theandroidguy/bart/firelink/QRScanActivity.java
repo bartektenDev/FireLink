@@ -16,6 +16,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class QRScanActivity extends AppCompatActivity {
 
     SurfaceView surfaceView;
@@ -36,6 +39,7 @@ public class QRScanActivity extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     private static final int MY_CAMERA_REQUEST_CODE = 100;
     String positioning;
+    GifImageView loading;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -49,6 +53,9 @@ public class QRScanActivity extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.CAMERA},
                     MY_CAMERA_REQUEST_CODE);
         }
+
+        loading = findViewById(R.id.gifLoadingImage);
+        loading.setVisibility(View.INVISIBLE);
 
         surfaceView = findViewById(R.id.surfaceView);
         scannedText = findViewById(R.id.progressStatusText);
@@ -101,7 +108,7 @@ public class QRScanActivity extends AppCompatActivity {
                             cameraSource.stop();
                             //surfaceView.setVisibility(View.INVISIBLE);
                             scannedText.setText("Scanning...");
-
+                            loading.setVisibility(View.VISIBLE);
                             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(120);
                             Handler handler = new Handler();
@@ -117,7 +124,7 @@ public class QRScanActivity extends AppCompatActivity {
                                         finish();
                                     }
                                 }
-                            }, 500);
+                            }, 2700);
                         }
                     });
                 }
@@ -135,6 +142,10 @@ public class QRScanActivity extends AppCompatActivity {
         if (requestCode == MY_CAMERA_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Camera Permission Granted!", Toast.LENGTH_LONG).show();
+                //quick reboot
+                Intent refresh = new Intent(this, QRScanActivity.class);
+                startActivity(refresh);
+                this.finish();
             } else {
                 Toast.makeText(this, "Camera Permission Denied!", Toast.LENGTH_LONG).show();
                 finish();

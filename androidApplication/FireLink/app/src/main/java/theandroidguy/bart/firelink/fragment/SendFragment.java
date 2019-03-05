@@ -2,6 +2,7 @@ package theandroidguy.bart.firelink.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -78,27 +79,33 @@ public class SendFragment extends Fragment {
         os1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getActivity(), QRScanActivity.class);
-                myIntent.putExtra("whichpos", "firstpos");
-                SendFragment.this.startActivity(myIntent);
+                if(card1os.getText() == "Empty"){
+                    Intent myIntent = new Intent(getActivity(), QRScanActivity.class);
+                    myIntent.putExtra("whichpos", "firstpos");
+                    SendFragment.this.startActivity(myIntent);
+                }
             }
         });
 
         os2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getActivity(), QRScanActivity.class);
-                myIntent.putExtra("whichpos", "secondpos");
-                SendFragment.this.startActivity(myIntent);
+                if(card2os.getText() == "Empty") {
+                    Intent myIntent = new Intent(getActivity(), QRScanActivity.class);
+                    myIntent.putExtra("whichpos", "secondpos");
+                    SendFragment.this.startActivity(myIntent);
+                }
             }
         });
 
         os3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getActivity(), QRScanActivity.class);
-                myIntent.putExtra("whichpos", "thirdpos");
-                SendFragment.this.startActivity(myIntent);
+                if(card3os.getText() == "Empty") {
+                    Intent myIntent = new Intent(getActivity(), QRScanActivity.class);
+                    myIntent.putExtra("whichpos", "thirdpos");
+                    SendFragment.this.startActivity(myIntent);
+                }
             }
         });
 
@@ -210,6 +217,11 @@ public class SendFragment extends Fragment {
                     while(deviceNameFound.find()){
                         devName = deviceNameFound.group(1);
                         card1devname.setText(devName);
+                        if(card1devname.getText().toString() != "Empty"){
+                            card1devname.setTextColor(Color.WHITE);
+                        }else{
+                            card1devname.setTextColor(Color.BLACK);
+                        }
                     }
 
                     Matcher deviceKeyFound = Pattern.compile(
@@ -229,29 +241,35 @@ public class SendFragment extends Fragment {
                         devIcon = deviceIconFound.group(1);
                         if(devIcon.equals("windowsicon")){
                             card1os.setText("Windows");
+                            card1os.setTextColor(Color.WHITE);
                             os1.setImageResource(R.drawable.windowsicon);
                             card1.setBackgroundResource(R.drawable.windowsbg);
                         }
                         else if(devIcon.equals("macicon")){
                             card1os.setText("Mac");
+                            card1os.setTextColor(Color.WHITE);
                             os1.setImageResource(R.drawable.macicon);
                             card1.setBackgroundResource(R.drawable.macbg);
                         }
                         else if(devIcon.equals("linuxicon")){
                             card1os.setText("Linux");
+                            card1os.setTextColor(Color.WHITE);
                             os1.setImageResource(R.drawable.linuxicon);
                             card1.setBackgroundResource(R.drawable.linuxbg);
                         }
                         else if(devIcon.equals("androidicon")){
                             card1os.setText("Android");
+                            card1os.setTextColor(Color.WHITE);
                             os1.setImageResource(R.drawable.androidicon);
                             card1.setBackgroundResource(R.drawable.androidbg);
                         }
                         else if(devIcon.equals("othericon")){
                             card1os.setText("Other");
+                            card1os.setTextColor(Color.WHITE);
                             os1.setImageResource(R.drawable.othericon);
                         }else{
                             card1os.setText("Empty");
+                            card1os.setTextColor(Color.BLACK);
                             os1.setImageResource(R.drawable.add);
                         }
                     }
@@ -265,7 +283,7 @@ public class SendFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "Exception: "+t.toString(), Toast.LENGTH_LONG).show();
             }
         }else if(file.exists() == false){
-            Toast.makeText(getActivity().getApplicationContext(), "File doesnt exists!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity().getApplicationContext(), "File doesnt exists!", Toast.LENGTH_SHORT).show();
             //file doesnt exist so lets make it and that means we are adding our first device so devices = 1
         }
 
@@ -295,6 +313,11 @@ public class SendFragment extends Fragment {
                     while(deviceNameFound.find()){
                         devName = deviceNameFound.group(1);
                         card2devname.setText(devName);
+                        if(card2devname.getText().toString() != "Empty"){
+                            card2devname.setTextColor(Color.WHITE);
+                        }else{
+                            card2devname.setTextColor(Color.BLACK);
+                        }
                     }
 
                     Matcher deviceKeyFound = Pattern.compile(
@@ -314,29 +337,35 @@ public class SendFragment extends Fragment {
                         devIcon = deviceIconFound.group(1);
                         if(devIcon.equals("windowsicon")){
                             card2os.setText("Windows");
+                            card2os.setTextColor(Color.WHITE);
                             os2.setImageResource(R.drawable.windowsicon);
                             card2.setBackgroundResource(R.drawable.windowsbg);
                         }
                         else if(devIcon.equals("macicon")){
                             card2os.setText("Mac");
+                            card2os.setTextColor(Color.WHITE);
                             os2.setImageResource(R.drawable.macicon);
                             card2.setBackgroundResource(R.drawable.macbg);
                         }
                         else if(devIcon.equals("linuxicon")){
                             card2os.setText("Linux");
+                            card2os.setTextColor(Color.WHITE);
                             os2.setImageResource(R.drawable.linuxicon);
                             card2.setBackgroundResource(R.drawable.linuxbg);
                         }
                         else if(devIcon.equals("androidicon")){
                             card2os.setText("Android");
+                            card2os.setTextColor(Color.WHITE);
                             os2.setImageResource(R.drawable.androidicon);
                             card2.setBackgroundResource(R.drawable.androidbg);
                         }
                         else if(devIcon.equals("othericon")){
                             card2os.setText("Other");
+                            card2os.setTextColor(Color.WHITE);
                             os2.setImageResource(R.drawable.othericon);
                         }else{
                             card2os.setText("Empty");
+                            card2os.setTextColor(Color.BLACK);
                             os2.setImageResource(R.drawable.add);
                         }
                     }
@@ -350,7 +379,7 @@ public class SendFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "Exception: "+t.toString(), Toast.LENGTH_LONG).show();
             }
         }else if(file2.exists() == false){
-            Toast.makeText(getActivity().getApplicationContext(), "File doesnt exists!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity().getApplicationContext(), "File doesnt exists!", Toast.LENGTH_SHORT).show();
             //file doesnt exist so lets make it and that means we are adding our first device so devices = 1
         }
         File file3 = new File(getActivity().getApplicationContext().getFilesDir() + "/" + devicesFile3);
@@ -379,6 +408,11 @@ public class SendFragment extends Fragment {
                     while(deviceNameFound.find()){
                         devName = deviceNameFound.group(1);
                         card3devname.setText(devName);
+                        if(card3devname.getText().toString() != "Empty"){
+                            card3devname.setTextColor(Color.WHITE);
+                        }else{
+                            card3devname.setTextColor(Color.BLACK);
+                        }
                     }
 
                     Matcher deviceKeyFound = Pattern.compile(
@@ -398,29 +432,35 @@ public class SendFragment extends Fragment {
                         devIcon = deviceIconFound.group(1);
                         if(devIcon.equals("windowsicon")){
                             card3os.setText("Windows");
+                            card3os.setTextColor(Color.WHITE);
                             os3.setImageResource(R.drawable.windowsicon);
                             card3.setBackgroundResource(R.drawable.windowsbg);
                         }
                         else if(devIcon.equals("macicon")){
                             card3os.setText("Mac");
+                            card3os.setTextColor(Color.WHITE);
                             os3.setImageResource(R.drawable.macicon);
                             card3.setBackgroundResource(R.drawable.macbg);
                         }
                         else if(devIcon.equals("linuxicon")){
                             card3os.setText("Linux");
+                            card3os.setTextColor(Color.WHITE);
                             os3.setImageResource(R.drawable.linuxicon);
                             card3.setBackgroundResource(R.drawable.linuxbg);
                         }
                         else if(devIcon.equals("androidicon")){
                             card3os.setText("Android");
+                            card3os.setTextColor(Color.WHITE);
                             os3.setImageResource(R.drawable.androidicon);
                             card3.setBackgroundResource(R.drawable.androidbg);
                         }
                         else if(devIcon.equals("othericon")){
                             card3os.setText("Other");
+                            card3os.setTextColor(Color.WHITE);
                             os3.setImageResource(R.drawable.othericon);
                         }else{
                             card3os.setText("Empty");
+                            card3os.setTextColor(Color.BLACK);
                             os3.setImageResource(R.drawable.add);
                         }
                     }
@@ -434,7 +474,7 @@ public class SendFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "Exception: "+t.toString(), Toast.LENGTH_LONG).show();
             }
         }else if(file3.exists() == false){
-            Toast.makeText(getActivity().getApplicationContext(), "File doesnt exists!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity().getApplicationContext(), "File doesnt exists!", Toast.LENGTH_SHORT).show();
             //file doesnt exist so lets make it and that means we are adding our first device so devices = 1
         }
     }

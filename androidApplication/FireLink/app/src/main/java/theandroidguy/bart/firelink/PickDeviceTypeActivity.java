@@ -103,6 +103,11 @@ public class PickDeviceTypeActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
     public void firstDevice(){
         try {
             OutputStreamWriter out = new OutputStreamWriter(openFileOutput(devicesFile1, 0));
@@ -111,7 +116,7 @@ public class PickDeviceTypeActivity extends AppCompatActivity {
                     "<devicetoken>" + deviceKey + "</devicetoken>\n" +
                     "<deviceimg>" + selectedDevice + "</deviceimg>");
             out.close();
-            Toast.makeText(getApplicationContext(), "Saved Successfully  Device!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Saved Successfully Device!", Toast.LENGTH_LONG).show();
         }
         catch (Throwable t) {
             Toast.makeText(getApplicationContext(), "Failed to save device!", Toast.LENGTH_LONG).show();
@@ -127,7 +132,7 @@ public class PickDeviceTypeActivity extends AppCompatActivity {
                     "<devicetoken>" + deviceKey + "</devicetoken>\n" +
                     "<deviceimg>" + selectedDevice + "</deviceimg>");
             out.close();
-            Toast.makeText(getApplicationContext(), "Saved Successfully  Device!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Saved Successfully Device!", Toast.LENGTH_LONG).show();
         }
         catch (Throwable t) {
             Toast.makeText(getApplicationContext(), "Failed to save device!", Toast.LENGTH_LONG).show();
@@ -144,7 +149,7 @@ public class PickDeviceTypeActivity extends AppCompatActivity {
                     "<devicetoken>" + deviceKey + "</devicetoken>\n" +
                     "<deviceimg>" + selectedDevice + "</deviceimg>");
             out.close();
-            Toast.makeText(getApplicationContext(), "Saved Successfully  Device!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Saved Successfully Device!", Toast.LENGTH_LONG).show();
         }
         catch (Throwable t) {
             Toast.makeText(getApplicationContext(), "Failed to save device!", Toast.LENGTH_LONG).show();
