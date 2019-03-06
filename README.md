@@ -1,8 +1,8 @@
 # FireLink <img src="images/web_hi_res_512.png" width="100px" height="100px" align="right"/>
 
-**Status**: Beta Stage 7
+**Status**: Beta Stage 8
 
-There are a total of 9 steps. 7 out of 9 work.
+There are a total of 9 steps. 8 out of 9 work.
 
 **What is it?** This is a chrome extension for sharing links immediately to your mobile device!
 
@@ -104,8 +104,5 @@ for a cup of coffee :)
 - [X] Setup localhost on port 5000 the token retriever
 - [X] QR Scanner in FireLink app
 - [X] Read QR Code in FireLink app
-- [ ] Send friend request to QR Code from setup on main PC
-- [ ] Retrieve friend request from FireLink app
-- [ ] Read FROM token in the notification from the app. Both parties need to accept the
-friend request otherwise if it is denied from the computer setup, then the FireLink
-application will cancel and not allow the request to be made or completed.
+- [X] Send friend request to QR Code from setup on main PC
+- [ ] Complete Entire Setup Cycle
