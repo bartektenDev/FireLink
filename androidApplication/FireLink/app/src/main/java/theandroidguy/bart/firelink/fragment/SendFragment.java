@@ -1,15 +1,22 @@
 package theandroidguy.bart.firelink.fragment;
 
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -36,10 +43,16 @@ public class SendFragment extends Fragment {
     private final static String devicesFile1 = "devicesData1.txt";
     private final static String devicesFile2 = "devicesData2.txt";
     private final static String devicesFile3 = "devicesData3.txt";
-    String devName, devKey, devIcon;
+    private final static String device1HTML = "device1.html";
+    String devName, devKey1, devKey2, devKey3, devIcon;
     TextView card1devname, card2devname, card3devname, card1os, card2os, card3os;
     ImageView os1, os2, os3;
     CardView card1, card2, card3;
+    WebView webView1;
+    Button device1Send, device2Send, device3Send;
+    ClipboardManager clipboard;
+    ClipData.Item item;
+    String copiedLink;
 
     public SendFragment() {
         // Required empty public constructor
@@ -66,6 +79,9 @@ public class SendFragment extends Fragment {
 
         listView = rootView.findViewById(R.id.listview);
 
+        device1Send = rootView.findViewById(R.id.device1Send);
+        device2Send = rootView.findViewById(R.id.device2Send);
+        device3Send = rootView.findViewById(R.id.device3Send);
         os1 = rootView.findViewById(R.id.card1image);
         os2 = rootView.findViewById(R.id.card2image);
         os3 = rootView.findViewById(R.id.card3image);
@@ -75,6 +91,10 @@ public class SendFragment extends Fragment {
         card1os = rootView.findViewById(R.id.card1os);
         card2os = rootView.findViewById(R.id.card2os);
         card3os = rootView.findViewById(R.id.card3os);
+
+        device1Send.setVisibility(View.INVISIBLE);
+        device2Send.setVisibility(View.INVISIBLE);
+        device3Send.setVisibility(View.INVISIBLE);
 
         os1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +156,99 @@ public class SendFragment extends Fragment {
         card1 = rootView.findViewById(R.id.cardview1);
         card2 = rootView.findViewById(R.id.cardview2);
         card3 = rootView.findViewById(R.id.cardview3);
+
+        webView1 = rootView.findViewById(R.id.webview1);
+        webView1.setVisibility(View.INVISIBLE);
+
+        clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        item = clipboard.getPrimaryClip().getItemAt(0);
+
+        device1Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                    // Gets the clipboard as text.
+                    item = clipboard.getPrimaryClip().getItemAt(0);
+                    copiedLink = item.getText().toString();
+                    if(copiedLink != ""){
+                        //insert data first
+                        webView1.evaluateJavascript("document.getElementById('deviceToken').value = '" + devKey1 + "'", null);
+                        webView1.evaluateJavascript("document.getElementById('notificationLink').value = '" + copiedLink + "'", null);
+                        //execute notification
+                        webView1.evaluateJavascript("bigredbutton();", null);
+                    }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Please copy a link to your clipboard then press send!", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    if(copiedLink != ""){
+                        webView1.loadUrl("document.getElementById('deviceToken').value = '" + devKey1 + "'");
+                        webView1.loadUrl("document.getElementById('notificationLink').value = '" + copiedLink + "'");
+                        webView1.loadUrl("javascript:"
+                                + "bigredbutton();");
+                    }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Please copy a link to your clipboard then press send!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
+        device2Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                    // Gets the clipboard as text.
+                    item = clipboard.getPrimaryClip().getItemAt(0);
+                    copiedLink = item.getText().toString();
+                    if(copiedLink != ""){
+                        //insert data first
+                        webView1.evaluateJavascript("document.getElementById('deviceToken').value = '" + devKey2 + "'", null);
+                        webView1.evaluateJavascript("document.getElementById('notificationLink').value = '" + copiedLink + "'", null);
+                        //execute notification
+                        webView1.evaluateJavascript("bigredbutton();", null);
+                    }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Please copy a link to your clipboard then press send!", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    if(copiedLink != ""){
+                        webView1.loadUrl("document.getElementById('deviceToken').value = '" + devKey2 + "'");
+                        webView1.loadUrl("document.getElementById('notificationLink').value = '" + copiedLink + "'");
+                        webView1.loadUrl("javascript:"
+                                + "bigredbutton();");
+                    }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Please copy a link to your clipboard then press send!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
+        device3Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                    // Gets the clipboard as text.
+                    item = clipboard.getPrimaryClip().getItemAt(0);
+                    copiedLink = item.getText().toString();
+                    if(copiedLink != ""){
+                        //insert data first
+                        webView1.evaluateJavascript("document.getElementById('deviceToken').value = '" + devKey3 + "'", null);
+                        webView1.evaluateJavascript("document.getElementById('notificationLink').value = '" + copiedLink + "'", null);
+                        //execute notification
+                        webView1.evaluateJavascript("bigredbutton();", null);
+                    }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Please copy a link to your clipboard then press send!", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    if(copiedLink != ""){
+                        webView1.loadUrl("document.getElementById('deviceToken').value = '" + devKey3 + "'");
+                        webView1.loadUrl("document.getElementById('notificationLink').value = '" + copiedLink + "'");
+                        webView1.loadUrl("javascript:"
+                                + "bigredbutton();");
+                    }else{
+                        Toast.makeText(getActivity().getApplicationContext(), "Please copy a link to your clipboard then press send!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
 
         checkDevicesFile();
         // Inflate the layout for this fragment
@@ -219,8 +332,11 @@ public class SendFragment extends Fragment {
                         card1devname.setText(devName);
                         if(card1devname.getText().toString() != "Empty"){
                             card1devname.setTextColor(Color.WHITE);
-                        }else{
+                            loadNotification();
+                            device1Send.setVisibility(View.VISIBLE);
+                        }else if(card1devname.getText().toString() == "Empty"){
                             card1devname.setTextColor(Color.BLACK);
+                            device1Send.setVisibility(View.GONE);
                         }
                     }
 
@@ -229,8 +345,7 @@ public class SendFragment extends Fragment {
                                     + "(.*?)" + Pattern.quote("</devicetoken>")).matcher(data);
 
                     while(deviceKeyFound.find()){
-                        devKey = deviceKeyFound.group(1);
-
+                        devKey1 = deviceKeyFound.group(1);
                     }
 
                     Matcher deviceIconFound = Pattern.compile(
@@ -315,8 +430,11 @@ public class SendFragment extends Fragment {
                         card2devname.setText(devName);
                         if(card2devname.getText().toString() != "Empty"){
                             card2devname.setTextColor(Color.WHITE);
+                            loadNotification();
+                            device2Send.setVisibility(View.VISIBLE);
                         }else{
                             card2devname.setTextColor(Color.BLACK);
+                            device2Send.setVisibility(View.GONE);
                         }
                     }
 
@@ -325,7 +443,7 @@ public class SendFragment extends Fragment {
                                     + "(.*?)" + Pattern.quote("</devicetoken>")).matcher(data);
 
                     while(deviceKeyFound.find()){
-                        devKey = deviceKeyFound.group(1);
+                        devKey2 = deviceKeyFound.group(1);
 
                     }
 
@@ -410,8 +528,11 @@ public class SendFragment extends Fragment {
                         card3devname.setText(devName);
                         if(card3devname.getText().toString() != "Empty"){
                             card3devname.setTextColor(Color.WHITE);
+                            loadNotification();
+                            device3Send.setVisibility(View.VISIBLE);
                         }else{
                             card3devname.setTextColor(Color.BLACK);
+                            device3Send.setVisibility(View.GONE);
                         }
                     }
 
@@ -420,7 +541,7 @@ public class SendFragment extends Fragment {
                                     + "(.*?)" + Pattern.quote("</devicetoken>")).matcher(data);
 
                     while(deviceKeyFound.find()){
-                        devKey = deviceKeyFound.group(1);
+                        devKey3 = deviceKeyFound.group(1);
 
                     }
 
@@ -485,4 +606,33 @@ public class SendFragment extends Fragment {
         checkDevicesFile();
     }
 
+    public void loadNotification() {
+        if(card1devname.getText() != "Empty"){
+            webView1.setWebChromeClient(new WebChromeClient());
+            webView1.setWebViewClient(new WebViewClient());
+            webView1.clearCache(true);
+            webView1.clearHistory();
+            webView1.getSettings().setJavaScriptEnabled(true);
+            webView1.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+            webView1.loadUrl("file:///android_asset/send.html");
+        }else if(card2devname.getText() != "Empty"){
+            webView1.setWebChromeClient(new WebChromeClient());
+            webView1.setWebViewClient(new WebViewClient());
+            webView1.clearCache(true);
+            webView1.clearHistory();
+            webView1.getSettings().setJavaScriptEnabled(true);
+            webView1.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+            webView1.loadUrl("file:///android_asset/send.html");
+        }else if(card3devname.getText() != "Empty"){
+            webView1.setWebChromeClient(new WebChromeClient());
+            webView1.setWebViewClient(new WebViewClient());
+            webView1.clearCache(true);
+            webView1.clearHistory();
+            webView1.getSettings().setJavaScriptEnabled(true);
+            webView1.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+            webView1.loadUrl("file:///android_asset/send.html");
+        }else{
+
+        }
+    }
 }

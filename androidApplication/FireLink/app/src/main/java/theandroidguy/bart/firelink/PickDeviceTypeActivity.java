@@ -156,5 +156,4 @@ public class PickDeviceTypeActivity extends AppCompatActivity {
         }
         finish();
     }
-
 }

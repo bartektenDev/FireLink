@@ -9,9 +9,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <WebView
+            android:id="@+id/webview1"
+            android:layout_width="32dp"
+            android:layout_height="34dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="114dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="22dp"
+            android:layout_toEndOf="@+id/autocopyswitch"
+            android:visibility="invisible" />
+
         <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            card_view:cardCornerRadius="18dp"
+            app:cardCornerRadius="18dp"
             android:layout_width="330dp"
             android:layout_height="160dp"
             android:layout_below="@+id/autocopyswitch"
@@ -23,7 +34,7 @@
             android:padding="16dp">
 
             <android.support.v7.widget.CardView
-                card_view:cardCornerRadius="18dp"
+                app:cardCornerRadius="18dp"
                 android:id="@+id/cardview2"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
@@ -35,6 +46,18 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/device2Send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card2os"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="62dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="76dp"
+                        android:layout_toEndOf="@+id/card2image"
+                        android:text="Send" />
 
                     <ImageView
                         android:id="@+id/card2image"
@@ -56,7 +79,8 @@
                         android:layout_marginTop="39dp"
                         android:layout_marginEnd="18dp"
                         android:layout_toEndOf="@+id/card2image"
-                        android:text="Device Name" />
+                        android:text="Device Name"
+                        android:visibility="visible" />
 
                     <TextView
                         android:id="@+id/card2os"
@@ -67,14 +91,15 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="9dp"
                         android:layout_marginEnd="18dp"
-                        android:layout_toEndOf="@+id/card2image" />
+                        android:layout_toEndOf="@+id/card2image"
+                        android:text="Empty"
+                        android:textColor="@android:color/black" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            card_view:cardCornerRadius="18dp"
+            app:cardCornerRadius="18dp"
             android:layout_width="330dp"
             android:layout_height="160dp"
             android:layout_below="@+id/autocopyswitch"
@@ -86,8 +111,7 @@
             android:padding="16dp">
 
             <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                card_view:cardCornerRadius="18dp"
+                app:cardCornerRadius="18dp"
                 android:id="@+id/cardview1"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
@@ -120,7 +144,8 @@
                         android:layout_marginTop="39dp"
                         android:layout_marginEnd="18dp"
                         android:layout_toEndOf="@+id/card1image"
-                        android:text="Device Name" />
+                        android:text="Device Name"
+                        android:visibility="visible" />
 
                     <TextView
                         android:id="@+id/card1os"
@@ -131,12 +156,26 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="9dp"
                         android:layout_marginEnd="18dp"
-                        android:layout_toEndOf="@+id/card1image" />
+                        android:layout_toEndOf="@+id/card1image"
+                        android:text="Empty"
+                        android:textColor="@android:color/black" />
+
+                    <Button
+                        android:id="@+id/device1Send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card1os"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="63dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="75dp"
+                        android:layout_toEndOf="@+id/card1image"
+                        android:text="Send" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <android.support.v7.widget.CardView
             android:layout_width="330dp"
             android:layout_height="160dp"
             android:layout_below="@+id/autocopyswitch"
@@ -146,11 +185,10 @@
             android:layout_marginTop="370dp"
             android:layout_marginEnd="30dp"
             android:padding="16dp"
-            card_view:cardCornerRadius="18dp">
+            app:cardCornerRadius="18dp">
 
             <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                card_view:cardCornerRadius="18dp"
+                app:cardCornerRadius="18dp"
                 android:id="@+id/cardview3"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
@@ -159,6 +197,18 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/device3Send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/card3os"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="74dp"
+                        android:layout_toEndOf="@+id/card3image"
+                        android:text="Send" />
 
                     <ImageView
                         android:id="@+id/card3image"
@@ -180,7 +230,8 @@
                         android:layout_marginTop="39dp"
                         android:layout_marginEnd="18dp"
                         android:layout_toEndOf="@+id/card3image"
-                        android:text="Device Name" />
+                        android:text="Device Name"
+                        android:visibility="visible" />
 
                     <TextView
                         android:id="@+id/card3os"
@@ -191,7 +242,9 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginTop="9dp"
                         android:layout_marginEnd="18dp"
-                        android:layout_toEndOf="@+id/card3image" />
+                        android:layout_toEndOf="@+id/card3image"
+                        android:text="Empty"
+                        android:textColor="@android:color/black" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </android.support.v7.widget.CardView>

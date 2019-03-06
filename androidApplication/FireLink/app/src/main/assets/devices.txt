@@ -1,9 +1,0 @@
-<devices>3</devices>
-
-<device1name>Barts Desktop</device1name>
-<device1token>1234</device1token>
-<device1img>windowsicon</device1img>
-
-<device2name>Barts Macbook Pro</device2name>
-<device2token>5678</device2token>
-<device2img>macicon</device2img>
