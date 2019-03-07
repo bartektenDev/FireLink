@@ -43,7 +43,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private void sendNotification(RemoteMessage remoteMessage){
         Map<String, String> data = remoteMessage.getData();
         config.title = data.get("title");
-        config.content = data.get("body");
+        config.content = data.get("content");
 
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
