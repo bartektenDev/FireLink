@@ -1,8 +1,8 @@
 # FireLink <img src="images/web_hi_res_512.png" width="100px" height="100px" align="right"/>
 
-**Status**: Beta Stage 8
+**Status**: Beta Stage 8.5
 
-There are a total of 9 steps. 8 out of 9 work.
+There are a total of 9 steps. 8.5 out of 9 work.
 
 **What is it?** This is a chrome extension for sharing links immediately to your mobile device!
 
@@ -105,4 +105,5 @@ for a cup of coffee :)
 - [X] QR Scanner in FireLink app
 - [X] Read QR Code in FireLink app
 - [X] Send friend request to QR Code from setup on main PC
+- [X] Receive key from mobile device on PC
 - [ ] Complete Entire Setup Cycle
