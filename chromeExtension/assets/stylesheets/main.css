@@ -3,6 +3,8 @@ body {
   display: grid;
   overflow: hidden;
   margin-right: 60px;
+  min-width: 200px;
+  max-width: 260px;
 }
 
 #clickme  {
@@ -15,4 +17,9 @@ body {
 
 #clickme:hover {
   cursor: hand;
+}
+
+#settingsButton {
+  margin-bottom: 40px;
+  margin-left: 80px;
 }

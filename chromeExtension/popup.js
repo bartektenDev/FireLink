@@ -18,7 +18,7 @@ document.getElementById("sendDataBtn").addEventListener("click", sendData);
 function sendData()
 {
   var serverToken = "AAAA16-Iy60:APA91bFhoWONQAI1GjBo_CiRV8LqabW3SAa7U8wL66ST_q9z7tSKebfTtAtNTEv9R59_-3x9wNl94RlhQLTLgac0F7djxa3JMC7XVAkNI5vPkrW2p4sQNa9AScjNykU7lL6yCOgOzkWl";
-  var deviceToken = "dGqYgwIOgWc:APA91bH7zZJvD9cXnbd-2KRjQmOa3BhFtmlZHGGRfGj30bq-hMAPoM62BDSfjosBSDIoKv_TVQuZac7cdi9JMVM28GBSP_ZiXJ0SSkX_Kk1FrWdDesn73YnJUWKaE1RTDlCBaYCat-8Q";
+  var deviceToken = "de8ssksk5ku:APA91bEXgTIkzS-L6TZuZ-ppXYXN0Knt4pRrEV646t11MHcgKo-_BiEa5PHxj9YvosWFImjlL8tEwvCwt6icZJDvKPVSOwDOQwWRkKeUdsicpj5g1xBrjnwc33ggdNicWJBgJ_1wcl7B";
   var titleToDevice = currentTabTitle;
   var contentToDevice = currentTabUrl;
 
@@ -45,4 +45,40 @@ function sendData()
     //get Title of current site
     //get current site link
   }, 3800);
+}
+
+function settingsDeviceTarget() {
+  var targetdevice = null;
+
+  var person = prompt("Please enter the device key to send links to: ", targetdevice);
+
+  if (person == null || person == "") {
+    txt = "User cancelled the prompt.";
+  } else {
+    txt = "Hello " + person + "! How are you today?";
+  }
+}
+
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+function writeTextFile(file)
+{
+
 }
