@@ -134,7 +134,6 @@ public class QRScanActivity extends AppCompatActivity {
 
 
     @Override
-
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -142,14 +141,14 @@ public class QRScanActivity extends AppCompatActivity {
         if (requestCode == MY_CAMERA_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Camera Permission Granted!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Now try again setting up a new device.", Toast.LENGTH_LONG).show();
                 //quick reboot
-                Intent refresh = new Intent(this, QRScanActivity.class);
-                startActivity(refresh);
-                this.finish();
+                finish();
             } else {
                 Toast.makeText(this, "Camera Permission Denied!", Toast.LENGTH_LONG).show();
                 finish();
             }
 
-        }}//end onRequestPermissionsResult
+        }
+    }
 }

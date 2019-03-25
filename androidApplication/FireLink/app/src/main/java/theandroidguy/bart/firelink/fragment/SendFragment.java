@@ -43,7 +43,7 @@ public class SendFragment extends Fragment {
     private final static String devicesFile1 = "devicesData1.txt";
     private final static String devicesFile2 = "devicesData2.txt";
     private final static String devicesFile3 = "devicesData3.txt";
-    private final static String device1HTML = "device1.html";
+
     String devName, devKey1, devKey2, devKey3, devIcon;
     TextView card1devname, card2devname, card3devname, card1os, card2os, card3os;
     ImageView os1, os2, os3;

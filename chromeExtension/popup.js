@@ -17,8 +17,8 @@ document.getElementById("sendDataBtn").addEventListener("click", sendData);
 
 function sendData()
 {
-  var serverToken = "AAAA16-Iy60:APA91bHw6cYpz8coElaSpv_y4WeIlXq_BVeAJ65BJOm1nb2PVQV310BUN_Ng4mnMqftT7XbGTCGtwOrLSIhYQ1lhi7wAm24d5xOa1qYbRVQhX-JqxpODlL1GsHTzGMzcy01HMp__C3-v";
-  var deviceToken = "cBsqDUmGj-Q:APA91bEvBVf6yOeoVmUXLDWo2CT7QnQL8tZHj1h2bK_qXAbjOD5HX2tiLcYwaXw186SgUD0edm9LtZWdu5L_QuQ7vy0SYb5MrOOMQo8kRpxHkie4bBGCKE5PJzBGBB1_2e7KnxovjP--";
+  var serverToken = "AAAA16-Iy60:APA91bFhoWONQAI1GjBo_CiRV8LqabW3SAa7U8wL66ST_q9z7tSKebfTtAtNTEv9R59_-3x9wNl94RlhQLTLgac0F7djxa3JMC7XVAkNI5vPkrW2p4sQNa9AScjNykU7lL6yCOgOzkWl";
+  var deviceToken = "dGqYgwIOgWc:APA91bH7zZJvD9cXnbd-2KRjQmOa3BhFtmlZHGGRfGj30bq-hMAPoM62BDSfjosBSDIoKv_TVQuZac7cdi9JMVM28GBSP_ZiXJ0SSkX_Kk1FrWdDesn73YnJUWKaE1RTDlCBaYCat-8Q";
   var titleToDevice = currentTabTitle;
   var contentToDevice = currentTabUrl;
 
