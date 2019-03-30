@@ -59,13 +59,4 @@ public class MyFirebaseInstanceService extends FirebaseInstanceIdService{
         }
     }
 
-    public void push(){
-        FirebaseMessaging fm = FirebaseMessaging.getInstance();
-        fm.send(new RemoteMessage.Builder("926362946477" + "@gcm.googleapis.com")
-                .setMessageId(Integer.toString(1))
-                .addData("my_message", "Hello World")
-                .addData("my_action","SAY_HELLO")
-                .build());
-    }
-
 }

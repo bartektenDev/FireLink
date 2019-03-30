@@ -22,7 +22,7 @@
       "128": "images/web_hi_res_512.png"
   },
   "permissions": [
-      "tabs", "identity"
+      "tabs", "identity", "storage"
   ],
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAixJ2s0xPFKgjFMTEQkiNZtYWJfjI+FZ0tOoCv/PAqgSFwjIDqoXcOOghyc/dr+8PFpjqwx1Rv5vizaJqmTC2S9HpvLZzs0YSilWdvy4Zax+sGrWZ1XZzolaCtDphE1rEr8tYTANQlyD/4Mff0bEkds256htbyJnpmBa34MiO/IG4WuvuP8AaPUN9L/kqHwGW9JoBst/+Nuf9lcUO5WifzYle6Jb78euQyf7Ov/GX/dbJRv6Is9pFg+lMbXxOis5ITjpHtSvH4C4ZC79L/kkCKjXA/j8RCX9LLspmFJqXC04G+m4BuXxqrySBdgy3u7HHxya4D1STIGNDuvejsqHzTwIDAQAB",
   "content_security_policy":"script-src 'self' https://cdn.firebase.com https://*.firebaseio.com/ https://apis.google.com https://www.gstatic.com/ ; object-src 'self'",

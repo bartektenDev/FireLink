@@ -47,14 +47,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        intent.putExtra("key", "value");
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(config.content));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,0);
 
         Intent broadcastIntent = new Intent(this, NotificationReceiver.class);
         broadcastIntent.putExtra("titleText", config.title);
         broadcastIntent.putExtra("urlText", config.content);
+
         PendingIntent actionIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
@@ -99,7 +98,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setSound(defaultSound)
                     .setContentText(config.content)
                     .setContentIntent(pendingIntent)
-                    .addAction(R.mipmap.ic_launcher, "Open Link", actionIntent)
+                    .addAction(R.mipmap.ic_launcher, "Copy Link", actionIntent)
                     .setColor(Color.CYAN)
                     .setWhen(System.currentTimeMillis())
                     .setAutoCancel(true)
