@@ -2,7 +2,7 @@
 
 **Status**: Beta Stage 8.5
 
-There are a total of 9 steps. 8.5 out of 9 work.
+There are a total of 9 steps. 9 out of 9 work.
 
 **What is it?** This is a chrome extension for sharing links immediately to your mobile device!
 
