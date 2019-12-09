@@ -1,6 +1,6 @@
 # FireLink <img src="images/web_hi_res_512.png" width="100px" height="100px" align="right"/>
 
-**Status**: Beta Stage 8.5
+**Status**: Completed and Now Recplaced in Google Chrome as a standard feature!
 
 There are a total of 9 steps. 9 out of 9 work.
 
